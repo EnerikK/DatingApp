@@ -11,5 +11,6 @@ public class IdentityMappings : Profile
     {
         CreateMap<UserRegistration, RegisterIdentity>();
         CreateMap<IdentityUserProfileDto, IdentityUserProfile>();
+        CreateMap<Login, LoginCommand>();
     }
 }

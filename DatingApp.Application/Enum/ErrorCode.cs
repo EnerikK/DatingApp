@@ -10,9 +10,14 @@ namespace DatingApp.Application.Enum
     {
         NotFound = 404,
         ServerError = 500,
-
-        UnknownError = 1,
+        
+        IdentityUserDoesNotExist = 203,
+        
+        
         IdentityUserAlreadyExists = 501,
         IdentityCreationFailed = 502,
+
+        UnknownError = 1
+
     }
 }

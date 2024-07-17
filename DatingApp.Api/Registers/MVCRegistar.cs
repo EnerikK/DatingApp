@@ -9,6 +9,8 @@ namespace DatingApp.Api.Registers
         {
             // Add services to the container.
 
+            builder.Services.AddCors();
+
             builder.Services.AddControllers();
                
             builder.Services.AddApiVersioning(

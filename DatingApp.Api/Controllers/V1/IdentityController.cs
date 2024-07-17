@@ -2,6 +2,7 @@
 using DatingApp.Api.Contracts.Identity;
 using DatingApp.Api.Filters;
 using DatingApp.Application.Identity.Commands;
+using DatingApp.Application.Identity.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,6 @@ namespace DatingApp.Api.Controllers.V1
             _mediator = mediator;
             _mapper = mapper;   
         }
-
         [HttpPost]
         [Route(ApiRoutes.Identity.Registration)]
         [ValidateModel]
@@ -33,6 +33,19 @@ namespace DatingApp.Api.Controllers.V1
 
             var map = _mapper.Map<IdentityUserProfile>(result.PayLoad);
 
+            return Ok(map);
+        }
+        [HttpPost]
+        [Route(ApiRoutes.Identity.Login)]
+        [ValidateModel]
+        public async Task<IActionResult> Login(Login login, CancellationToken cancellationToken)
+        {
+            var command = _mapper.Map<LoginCommand>(login);
+            var result = await _mediator.Send(command, cancellationToken);
+
+            if (result.IsError) HandleErrorResponse(result.Errors);
+
+            var map = _mapper.Map<IdentityUserProfileDto>(result.PayLoad);
             return Ok(map);
         }
     }
