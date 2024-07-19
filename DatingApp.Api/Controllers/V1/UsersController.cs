@@ -2,6 +2,8 @@
 using DatingApp.Api.Contracts.UserProfile.Responses;
 using DatingApp.Application.UserProfiles.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +22,6 @@ namespace DatingApp.Api.Controllers.V1
             _mediator = mediator;
             _mapper = mapper;
         }
-
         [HttpGet]
         public async Task<IActionResult> GetAllProfiles(CancellationToken cancellationToken)
         {
