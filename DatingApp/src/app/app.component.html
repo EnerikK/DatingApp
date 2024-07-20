@@ -1,14 +1,7 @@
 <app-nav></app-nav>
 
 <div class="container" style="margin-top: 100px">
-  <ul>
-    @for (user of users; track user.userProfileId)
-    {
-      <li>
-        {{user.userProfileId}} - {{user.basicInfo.firstName}}
-      </li>
-    }
-  </ul>
+  <router-outlet></router-outlet>
 </div>
 
 

@@ -21,6 +21,17 @@ export class AccountService {
       })
     )
   }
+  register(model: any) {
+    return this.http.post<User>(this.baseUrl + 'v1.0/Identity/registration',model).pipe(
+      map(user => {
+        if(user) {
+          localStorage.setItem('user',JSON.stringify(user));
+          this.currentUser.set(user);
+        }
+        return user
+      })
+    )
+  }
 
   logout() {
     localStorage.removeItem('user');
