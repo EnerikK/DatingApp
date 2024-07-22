@@ -25,7 +25,6 @@ namespace DatingApp.Api.Filters
                         apiError.Errors.Add(modelError.ErrorMessage);
                     }
                 }
-
                 context.Result = new BadRequestObjectResult(apiError);
             }
         }

@@ -27,6 +27,7 @@ namespace DatingApp.Api.Controllers.V1
             apiError.StatusMessage = "Bad request";
             apiError.TimeStamp = DateTime.Now;
             errors.ForEach(error => apiError.Errors.Add(error.Message));
+            
             return StatusCode(400, apiError);
 
         }

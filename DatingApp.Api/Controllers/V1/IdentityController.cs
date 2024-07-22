@@ -43,9 +43,9 @@ namespace DatingApp.Api.Controllers.V1
             var command = _mapper.Map<LoginCommand>(login);
             var result = await _mediator.Send(command, cancellationToken);
 
-            if (result.IsError) HandleErrorResponse(result.Errors);
+            if (result.IsError) return HandleErrorResponse(result.Errors);
 
-            var map = _mapper.Map<IdentityUserProfileDto>(result.PayLoad);
+            var map = _mapper.Map<IdentityUserProfile>(result.PayLoad);
             return Ok(map);
         }
     }

@@ -54,7 +54,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand,OperationResult<
     private async Task<IdentityUser> ValidateAndGetIdentity(LoginCommand request)
     {
         var identityUser = await _userManager.FindByEmailAsync(request.Username);
-        if (identityUser is null) _result.AddError(ErrorCode.IdentityUserAlreadyExists,ErrorMessages.NoExistingUser);
+        if (identityUser == null) _result.AddError(ErrorCode.IdentityUserAlreadyExists,ErrorMessages.NoExistingUser);
 
         var validPassword = await _userManager.CheckPasswordAsync(identityUser, request.Password);
         if(!validPassword) _result.AddError(ErrorCode.IdentityUserDoesNotExist,ErrorMessages.IncorrectPassword);
