@@ -90,7 +90,7 @@ namespace DatingApp.Application.Identity.CommandsHandler
             try
             {
                 var profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username,
-                    request.Phone, request.DateOfBirth, request.CurrentCity ,request.Introduction,request.Interests,request.LookingFor,request.photos);
+                    request.Phone, request.DateOfBirth, request.CurrentCity);
 
                 var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
                 _dataContext.UserProfiles.Add(profile);

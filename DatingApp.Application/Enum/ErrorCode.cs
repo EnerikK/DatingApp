@@ -13,6 +13,7 @@ namespace DatingApp.Application.Enum
         
         IdentityUserDoesNotExist = 203,
         
+        UnauthorizedAccountRemoval = 303,
         
         IdentityUserAlreadyExists = 501,
         IdentityCreationFailed = 502,

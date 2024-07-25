@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Identity\QueriesHandler\" />
-    <Folder Include="Identity\Queries\" />
     <Folder Include="UserProfiles\CommandHandler\" />
-    <Folder Include="UserProfiles\Commands\" />
   </ItemGroup>
 
   <ItemGroup>

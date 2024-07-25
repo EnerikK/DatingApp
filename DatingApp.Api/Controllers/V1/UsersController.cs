@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DatingApp.Api.Contracts.UserProfile.Responses;
+using DatingApp.Api.Filters;
 using DatingApp.Application.UserProfiles.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -29,6 +30,21 @@ namespace DatingApp.Api.Controllers.V1
             var response = await _mediator.Send(query, cancellationToken);
             var profiles = _mapper.Map<List<UserProfileResponse>>(response.PayLoad);
             return Ok(profiles);
+        }
+
+        [Route(ApiRoutes.UserProfiles.IdRoute)]
+        [HttpGet]
+        [ValidateGuid("id")]
+        public async Task<IActionResult> GetUserProfileById(string id, CancellationToken cancellationToken)
+        {
+            var query = new GetUserProfileById { UserProfileId = Guid.Parse(id) };
+            var response = await _mediator.Send(query, cancellationToken);
+
+            if (response.IsError) return HandleErrorResponse(response.Errors);
+
+            var userProfile = UserProfileResponse.UserProfileDto(response.PayLoad);
+
+            return Ok(userProfile);
         }
     }
 }
