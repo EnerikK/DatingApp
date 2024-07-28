@@ -1,9 +1,11 @@
 ﻿using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatingApp.Application.Identity.Dtos;
 
 namespace DatingApp.Application.UserProfiles.Dtos
 {
@@ -15,6 +17,10 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string? Phone { get; private set; }
         public DateTime DateOfBirth { get; private set; }
         public string? CurrentCity { get; private set; }
+        public string KnownAs { get; set; }
+        public string Introduction { get; set; }
+        public string Interests { get; set; }
+        public string LookingFor { get; set; }
 
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {
@@ -25,7 +31,11 @@ namespace DatingApp.Application.UserProfiles.Dtos
                 EmailAddress = basicInfo.EmailAddress,
                 Phone = basicInfo.Phone,
                 DateOfBirth = basicInfo.DateOfBirth,
-                CurrentCity = basicInfo.CurrentCity
+                CurrentCity = basicInfo.CurrentCity,
+                KnownAs = basicInfo.KnownAs,
+                Introduction = basicInfo.Introduction,
+                Interests = basicInfo.Interests,
+                LookingFor = basicInfo.LookingFor
             };
         }
     }

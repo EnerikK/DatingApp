@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
 
 namespace DatingApp.Application.Identity.Dtos
 {
@@ -16,5 +17,10 @@ namespace DatingApp.Application.Identity.Dtos
         public DateTime DateOfBirth { get; set; }
         public string CurrentCity { get; set; }
         public string Token { get; set; }
+        public string KnownAs { get; set; }
+        public string Introduction { get; set; }
+        public string Interests { get; set; }
+        public string LookingFor { get; set; }
+        public List<Photos> photos { get; set; } = new List<Photos>();
     }
 }

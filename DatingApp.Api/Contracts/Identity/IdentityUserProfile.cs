@@ -1,4 +1,7 @@
-﻿namespace DatingApp.Api.Contracts.Identity
+﻿using DatingApp.Application.Identity.Dtos;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
+
+namespace DatingApp.Api.Contracts.Identity
 {
     public class IdentityUserProfile
     {
@@ -10,5 +13,10 @@
         public DateTime DateOfBirth { get; set; }
         public string CurrentCity { get; set; }
         public string Token { get; set; }
+        public string KnownAs { get; set; }
+        public string Introduction { get; set; }
+        public string Interests { get; set; }
+        public string LookingFor { get; set; }
+        public List<Photos> photos { get; set; } = new List<Photos>();
     }
 }

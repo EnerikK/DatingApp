@@ -1,4 +1,7 @@
-﻿using DatingApp.Application.UserProfiles.Dtos;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using DatingApp.Application.Identity.Dtos;
+using DatingApp.Application.UserProfiles.Dtos;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
 
 namespace DatingApp.Api.Contracts.UserProfile.Responses
 {
@@ -11,6 +14,10 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
         public string Phone { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string CurrentCity { get; set; }
+        public string KnownAs { get; set; }
+        public string Introduction { get; set; }
+        public string Interests { get; set; }
+        public string LookingFor { get; set; }
 
         public static BasicInformation UserInfoDto (UserInfoDto infoDto)
         {
@@ -21,7 +28,11 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
                 EmailAddress = infoDto.EmailAddress,
                 Phone = infoDto.Phone,
                 DateOfBirth = infoDto.DateOfBirth,
-                CurrentCity = infoDto.CurrentCity
+                CurrentCity = infoDto.CurrentCity,
+                Introduction = infoDto.Introduction,
+                KnownAs = infoDto.KnownAs,
+                Interests = infoDto.Interests,
+                LookingFor = infoDto.LookingFor,
             };
         }
     }

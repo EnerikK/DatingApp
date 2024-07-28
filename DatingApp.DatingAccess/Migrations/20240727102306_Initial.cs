@@ -12,6 +12,21 @@ namespace DatingApp.DataAccess.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Photos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Autoincrement", true),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsMain = table.Column<bool>(type: "bit", nullable: false),
+                    PublicId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "RoleClaims",
                 columns: table => new
                 {
@@ -81,6 +96,10 @@ namespace DatingApp.DataAccess.Migrations
                     BasicInfo_Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BasicInfo_CurrentCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BasicInfo_KnownAs = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BasicInfo_Introduction = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BasicInfo_Interests = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BasicInfo_LookingFor = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -143,6 +162,9 @@ namespace DatingApp.DataAccess.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Photos");
+
             migrationBuilder.DropTable(
                 name: "RoleClaims");
 

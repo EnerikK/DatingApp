@@ -18,16 +18,17 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public BasicInfo BasicInfo { get; private set; }
         public DateTime DateCreated { get; private set; }
         public DateTime LastModified { get; private set; }
+        public List<Photos> Photos { get; private set; } = new List<Photos>();
         //Factory Method
-        public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)
+        public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo ,List<Photos> photos)
         {
-            
             return new UserProfile
             {
                 IdentityId = identityId,
                 BasicInfo = basicInfo,
                 DateCreated = DateTime.UtcNow,
                 LastModified = DateTime.UtcNow,
+                Photos = photos
             };
 
         }

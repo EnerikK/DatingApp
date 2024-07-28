@@ -1,5 +1,7 @@
 ﻿using DatingApp.Application.UserProfiles.Queries;
 using System.ComponentModel.DataAnnotations;
+using DatingApp.Application.Identity.Dtos;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
 
 namespace DatingApp.Api.Contracts.Identity
 {
@@ -21,13 +23,33 @@ namespace DatingApp.Api.Contracts.Identity
         [MinLength(3)]
         [MaxLength(50)]
         public string LastName { get; set; }
+        
+        [Required]
+        [MinLength(3)]
+        [MaxLength(50)]
+        public string KnownAs { get; set; }
 
         [Required]
-
         public DateTime DateOfBirth { get; set; }
 
+        [Required]
         public string Phone { get; set; }
+        
+        [Required]
         public string CurrentCity { get; set; }
+        
+        [MinLength(5)]
+        [MaxLength(200)]
+        public string Introduction { get; set; }
+
+        [MinLength(5)]
+        [MaxLength(200)]
+        public string Interests { get; set; }
+        
+        [Required]
+        public string LookingFor { get; set; }
+
+        [Required] public List<Photos> photos { get; set; } = new List<Photos>();
 
     }
 }

@@ -2,6 +2,7 @@
 using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace DatingApp.DataAccess
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Photos> Photos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,6 +32,7 @@ namespace DatingApp.DataAccess
             builder.ApplyConfiguration(new IdentityUserLoginConfig());
             builder.ApplyConfiguration(new IdentityUserRoleConfig());
             builder.ApplyConfiguration(new IdentityUserTokenConfig());
+
         }
     }
 
