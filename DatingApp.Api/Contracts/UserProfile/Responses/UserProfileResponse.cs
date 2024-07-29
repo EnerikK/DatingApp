@@ -1,4 +1,5 @@
 ﻿using DatingApp.Application.UserProfiles.Dtos;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
 
 namespace DatingApp.Api.Contracts.UserProfile.Responses
 {
@@ -11,7 +12,10 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
 
         public static UserProfileResponse UserProfileDto(UserProfileDto profile)
         {
-            var profileResponse = new UserProfileResponse { UserProfileId = profile.UserProfileId };
+            var profileResponse = new UserProfileResponse
+            {
+                UserProfileId = profile.UserProfileId,
+            };
             profileResponse.BasicInfo = BasicInformation.UserInfoDto(profile.UserInfo);
             return profileResponse;
         }

@@ -21,7 +21,6 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {
             return new UserInfoDto
@@ -35,7 +34,7 @@ namespace DatingApp.Application.UserProfiles.Dtos
                 KnownAs = basicInfo.KnownAs,
                 Introduction = basicInfo.Introduction,
                 Interests = basicInfo.Interests,
-                LookingFor = basicInfo.LookingFor
+                LookingFor = basicInfo.LookingFor,
             };
         }
     }

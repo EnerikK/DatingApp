@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingApp.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240728184506_adding photos")]
-    partial class addingphotos
+    [Migration("20240729190831_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,12 +40,7 @@ namespace DatingApp.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserProfileId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserProfileId");
 
                     b.ToTable("Photos");
                 });
@@ -239,13 +234,6 @@ namespace DatingApp.DataAccess.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.Photos", b =>
-                {
-                    b.HasOne("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", null)
-                        .WithMany("Photos")
-                        .HasForeignKey("UserProfileId");
-                });
-
             modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", b =>
                 {
                     b.OwnsOne("DatingApp.Domain.Aggregates.UserProfileAggregates.BasicInfo", "BasicInfo", b1 =>
@@ -302,11 +290,6 @@ namespace DatingApp.DataAccess.Migrations
 
                     b.Navigation("BasicInfo")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", b =>
-                {
-                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

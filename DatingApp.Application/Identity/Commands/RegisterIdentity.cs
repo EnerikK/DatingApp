@@ -19,15 +19,11 @@ namespace DatingApp.Application.Identity.Commands
         public DateTime DateOfBirth { get; set; }
         public string Phone { get; set; }
         public string CurrentCity { get; set; }
-        
         public string KnownAs { get; set; }
-
         public string Introduction { get; set; }
-        
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-
-        public List<Photos> photos { get; set; } = new List<Photos>();
+        public List<Photos> photos { get; set; } = [];
 
     }
 }

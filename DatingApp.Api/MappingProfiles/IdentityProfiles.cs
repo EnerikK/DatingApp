@@ -30,5 +30,6 @@ public class IdentityProfiles : Profile
                 => opt.MapFrom(src => src.BasicInfo.Interests))
             .ForMember(dest => dest.LookingFor, opt
                 => opt.MapFrom(src => src.BasicInfo.LookingFor));
+
     }
 }

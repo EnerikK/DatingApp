@@ -93,7 +93,7 @@ namespace DatingApp.Application.Identity.CommandsHandler
                     request.Phone, request.DateOfBirth, request.CurrentCity,
                     request.KnownAs,request.Introduction,request.Interests,request.LookingFor);
 
-                var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo,request.photos);
+                var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
                 _dataContext.UserProfiles.Add(profile);
                 await _dataContext.SaveChangesAsync(cancellationToken);
                 return profile;
