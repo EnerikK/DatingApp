@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/IdentityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/IdentityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityMappings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityMappings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Enum/ErrorCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Enum/ErrorCode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DatingApp/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DatingApp/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/DatingApp.DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.DatingAccess/DatingApp.DataAccess.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/DatingApp.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/DatingApp.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/errors/test-errors/test-errors.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/errors/test-errors/test-errors.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Angular Component" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2jOCQmYNDEtpo82XUPJIhGwc1Ou" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,9 +48,43 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/!CSharp Projects/DatingApp/DatingApp/package.json",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI Server.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "E:\\!CSharp Projects\\DatingApp\\DatingApp\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/DatingApp/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <EXTENSION ID="com.intellij.lang.javascript.buildTools.npm.rc.StartBrowserRunConfigurationExtension">
+        <browser start="true" url="http://localhost:4200" />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,7 +93,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721248731309</updated>
+      <workItem from="1722459001633" duration="2391000" />
+      <workItem from="1722461464744" duration="16000" />
+      <workItem from="1722461495215" duration="233000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

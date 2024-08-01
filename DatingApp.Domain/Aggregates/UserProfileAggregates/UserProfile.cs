@@ -18,9 +18,11 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public BasicInfo BasicInfo { get; private set; }
         public DateTime DateCreated { get; private set; }
         public DateTime LastModified { get; private set; }
-       
+
+        public Photos Photo { get; private set; }
+
         //Factory Method
-        public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)
+        public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo,Photos photos)
         {
             return new UserProfile
             {
@@ -28,14 +30,16 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
                 BasicInfo = basicInfo,
                 DateCreated = DateTime.UtcNow,
                 LastModified = DateTime.UtcNow,
+                Photo = photos
             };
 
         }
         //Public Method 
-        public void UpdateBasicInfo(BasicInfo newInfo)
+        public void UpdateBasicInfo(BasicInfo newInfo,Photos newPhoto)
         {
             BasicInfo = newInfo;
             LastModified = DateTime.UtcNow;
+            Photo = newPhoto;
         }
     }
 }

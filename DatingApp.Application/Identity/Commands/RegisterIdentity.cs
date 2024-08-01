@@ -23,7 +23,7 @@ namespace DatingApp.Application.Identity.Commands
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-        public List<Photos> photos { get; set; } = [];
+        public Photos Photo { get; set; }
 
     }
 }

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Angular.js" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/../../VisualStudio/Common7/ide/extensions/Microsoft/javascript/TestFrameworks/Angular/Angular.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../VisualStudio/Common7/ide/extensions/Microsoft/javascript/TestFrameworks/Angular/Angular.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

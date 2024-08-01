@@ -92,8 +92,11 @@ namespace DatingApp.Application.Identity.CommandsHandler
                 var profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username,
                     request.Phone, request.DateOfBirth, request.CurrentCity,
                     request.KnownAs,request.Introduction,request.Interests,request.LookingFor);
+                
+                
+                
 
-                var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
+                var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo,request.Photo);
                 _dataContext.UserProfiles.Add(profile);
                 await _dataContext.SaveChangesAsync(cancellationToken);
                 return profile;
