@@ -84,6 +84,7 @@ namespace DatingApp.Application.Identity.CommandsHandler
             }
             return identity;
         }
+        
         private async Task<UserProfile> CreateUserProfileAsync(RegisterIdentity request, IDbContextTransaction transaction,
             IdentityUser identity, CancellationToken cancellationToken)
         {
@@ -91,12 +92,9 @@ namespace DatingApp.Application.Identity.CommandsHandler
             {
                 var profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username,
                     request.Phone, request.DateOfBirth, request.CurrentCity,
-                    request.KnownAs,request.Introduction,request.Interests,request.LookingFor);
+                    request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoId,request.Url,request.IsMain);
                 
-                
-                
-
-                var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo,request.Photo);
+                var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
                 _dataContext.UserProfiles.Add(profile);
                 await _dataContext.SaveChangesAsync(cancellationToken);
                 return profile;

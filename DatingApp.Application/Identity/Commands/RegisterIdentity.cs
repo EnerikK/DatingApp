@@ -23,7 +23,8 @@ namespace DatingApp.Application.Identity.Commands
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-        public Photos Photo { get; set; }
-
+        public int PhotoId { get; set; }
+        public string Url { get; set; }
+        public bool IsMain { get; set; }
     }
 }

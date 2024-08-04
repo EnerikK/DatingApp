@@ -5,18 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DatingApp/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DatingApp/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/DatingApp.DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.DatingAccess/DatingApp.DataAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/DatingApp.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/DatingApp.Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/errors/test-errors/test-errors.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/errors/test-errors/test-errors.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/BasicInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/BasicInformation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Commands/RegisterIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Commands/RegisterIdentity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/RegisterIdentityHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/RegisterIdentityHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserInfoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserInfoDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.DatingAccess/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240729190831_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240729190831_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/BasicInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/BasicInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/Photos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/Photos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_interceptors/error.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_interceptors/error.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/BasicInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/BasicInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/members.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/members.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/app.routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,24 +67,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/!CSharp Projects/DatingApp/DatingApp/package.json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Angular CLI Server.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "E:\\!CSharp Projects\\DatingApp\\DatingApp\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/!CSharp Projects/DatingApp/DatingApp/package.json&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Debug&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\!CSharp Projects\\DatingApp\\DatingApp\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Angular CLI Server" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/DatingApp/package.json" />
@@ -96,6 +118,8 @@
       <workItem from="1722459001633" duration="2391000" />
       <workItem from="1722461464744" duration="16000" />
       <workItem from="1722461495215" duration="233000" />
+      <workItem from="1722774611390" duration="7854000" />
+      <workItem from="1722802088819" duration="547000" />
     </task>
     <servers />
   </component>

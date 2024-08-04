@@ -29,7 +29,15 @@ public class IdentityProfiles : Profile
             .ForMember(dest => dest.Interests, opt
                 => opt.MapFrom(src => src.BasicInfo.Interests))
             .ForMember(dest => dest.LookingFor, opt
-                => opt.MapFrom(src => src.BasicInfo.LookingFor));
+                => opt.MapFrom(src => src.BasicInfo.LookingFor))
+            .ForMember(dest => dest.PhotoId, opt
+                => opt.MapFrom(src => src.BasicInfo.PhotoId))
+            .ForMember(dest => dest.Url, opt
+                => opt.MapFrom(src => src.BasicInfo.Url))
+            .ForMember(dest => dest.IsMain, opt
+                => opt.MapFrom(src => src.BasicInfo.IsMain));
+
+
 
     }
 }

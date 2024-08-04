@@ -1,1 +1,50 @@
-<p>member-detail works!</p>
+
+@if(member)
+{
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <img src="{{member.basicInfo.url || './assets/user.png'}}"
+             alt="{{member.basicInfo.knownAs}}"
+             class="card-img img-thumbnail"
+        >
+        <div class="card-body">
+          <div>
+            <strong>Location:</strong>
+            <p>{{member.basicInfo.currentCity}}</p>
+          </div>
+          <div>
+            <strong>Introduction:</strong>
+            <p>{{member.basicInfo.introduction}}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary">Like</button>
+            <button class="btn btn-success">Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <tabset class="member-tabs">
+        <tab heading="About {{member.basicInfo.knownAs}}">
+          <h4>Description</h4>
+          <p>{{member.basicInfo.introduction}}</p>
+          <h4>Looking For</h4>
+          <p>{{member.basicInfo.lookingFor}}</p>
+        </tab>
+        <tab heading="Interests">
+          <h4>Interests</h4>
+          <p>{{member.basicInfo.interests}}</p>
+        </tab>
+        <tab heading="Photos">
+          <p>Photo here</p>
+        </tab>
+        <tab heading="Messages">
+          <p>Messages here</p>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+}

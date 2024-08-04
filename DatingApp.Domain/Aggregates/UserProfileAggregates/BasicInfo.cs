@@ -24,12 +24,14 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-
+        public int PhotoId { get; set; }
+        public string Url { get; set; }
+        public bool IsMain { get; set; }
         //Factory Method
         public static BasicInfo CreateBasicInfo(
             string firstName, string lastName, string emailAddress,
             string phone, DateTime dateOfBirth,string currentCity,
-            string knownAs, string introduction, string interests, string lookingFor)
+            string knownAs, string introduction, string interests, string lookingFor,int id , string url , bool isMain)
         {
             var validator = new BasicInfoValidator();
 
@@ -45,6 +47,9 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
                 Introduction = introduction,
                 Interests = interests,
                 LookingFor = lookingFor,
+                PhotoId = id,
+                Url = url,
+                IsMain = isMain
             };
 
             var validationResult = validator.Validate(ObjToValidate);

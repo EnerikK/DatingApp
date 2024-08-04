@@ -10,4 +10,7 @@ export interface BasicInfo {
   introduction: string
   interests: string
   lookingFor: string
+  photoId: number
+  url: string
+  isMain: boolean
 }

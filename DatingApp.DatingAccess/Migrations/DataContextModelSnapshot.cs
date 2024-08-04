@@ -22,26 +22,6 @@ namespace DatingApp.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.Photos", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsMain")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Photos");
-                });
-
             modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", b =>
                 {
                     b.Property<Guid>("UserProfileId")
@@ -261,6 +241,9 @@ namespace DatingApp.DataAccess.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
+                            b1.Property<bool>("IsMain")
+                                .HasColumnType("bit");
+
                             b1.Property<string>("KnownAs")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
@@ -274,6 +257,13 @@ namespace DatingApp.DataAccess.Migrations
                                 .HasColumnType("nvarchar(max)");
 
                             b1.Property<string>("Phone")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("PhotoId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Url")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 

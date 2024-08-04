@@ -21,6 +21,9 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
+        public int PhotoId { get; set; }
+        public string Url { get; set; }
+        public bool IsMain { get; set; }
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {
             return new UserInfoDto
@@ -35,6 +38,9 @@ namespace DatingApp.Application.UserProfiles.Dtos
                 Introduction = basicInfo.Introduction,
                 Interests = basicInfo.Interests,
                 LookingFor = basicInfo.LookingFor,
+                PhotoId = basicInfo.PhotoId,
+                Url = basicInfo.Url,
+                IsMain = basicInfo.IsMain
             };
         }
     }
