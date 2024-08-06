@@ -26,6 +26,7 @@ export class RegisterComponent {
     })
   }
 
+
   cancel() {
     this.cancelRegister.emit(false);
   }

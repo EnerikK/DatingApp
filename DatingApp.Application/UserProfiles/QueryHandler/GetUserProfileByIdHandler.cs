@@ -20,7 +20,7 @@ public class GetUserProfileByIdHandler : IRequestHandler<GetUserProfileById,Oper
     {
         var result = new OperationResult<UserProfileDto>();
         var profile  = await _dataContext.UserProfiles.FirstOrDefaultAsync(
-            userProfile => userProfile.UserProfileId == request.UserProfileId,cancellationToken: cancellationToken);
+            userProfile => userProfile.UserProfileId == request.UserProfileId,cancellationToken);
             
         if (profile is null) //Checking if the userprofile with this specific id exists
         {

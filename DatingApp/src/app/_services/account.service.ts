@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import { User } from '../_models/user';
 import {map} from "rxjs";
 import {environment} from "../../environments/environment";
+import {Member} from "../_models/Member";
+import {MembersService} from "./members.service";
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +35,6 @@ export class AccountService {
       })
     )
   }
-
   logout() {
     localStorage.removeItem('user');
     this.currentUser.set(null);

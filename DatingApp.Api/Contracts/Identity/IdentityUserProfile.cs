@@ -5,6 +5,7 @@ namespace DatingApp.Api.Contracts.Identity
 {
     public class IdentityUserProfile
     {
+        public Guid UserProfileId { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

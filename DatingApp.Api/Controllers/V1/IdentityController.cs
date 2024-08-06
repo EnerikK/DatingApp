@@ -1,10 +1,8 @@
-﻿using System.Security.Claims;
-using AutoMapper;
+﻿using AutoMapper;
 using DatingApp.Api.Contracts.Identity;
 using DatingApp.Api.Extensions;
 using DatingApp.Api.Filters;
 using DatingApp.Application.Identity.Commands;
-using DatingApp.Application.Identity.Dtos;
 using DatingApp.Application.Identity.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -90,5 +88,6 @@ namespace DatingApp.Api.Controllers.V1
             var map = _mapper.Map<IdentityUserProfile>(result.PayLoad);
             return Ok(map);
         }
+
     }
 }

@@ -24,7 +24,6 @@ namespace DatingApp.Api.Contracts.Identity
         [MaxLength(50)]
         public string LastName { get; set; }
         
-        [Required]
         [MinLength(3)]
         [MaxLength(50)]
         public string KnownAs { get; set; }
@@ -46,7 +45,8 @@ namespace DatingApp.Api.Contracts.Identity
         [MaxLength(200)]
         public string Interests { get; set; }
         
-        [Required]
+        [MinLength(5)]
+        [MaxLength(200)]
         public string LookingFor { get; set; }
         
         public int PhotoId { get; set; }

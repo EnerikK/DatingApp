@@ -16,5 +16,7 @@ export class MembersService {
   getMember(userProfileId: string) {
     return this.http.get<Member>(this.baseUrl + 'v1.0/Users/' + userProfileId);
   }
-
+  updateMember(userProfileId: string ){
+    return this.http.patch<Member>(this.baseUrl + 'v1.0/Users/', userProfileId);
+  }
 }

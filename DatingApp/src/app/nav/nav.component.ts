@@ -27,7 +27,7 @@ export class NavComponent {
       error: error => this.toastr.error(error.error)
     })
   }
-  logut() {
+  logout() {
     this.accountService.logout();
     this.router.navigateByUrl('/')
   }

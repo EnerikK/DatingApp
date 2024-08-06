@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using DatingApp.Api.Contracts.UserProfile.Requests;
 using DatingApp.Api.Contracts.UserProfile.Responses;
 using DatingApp.Api.Filters;
+using DatingApp.Application.UserProfiles.Commands;
 using DatingApp.Application.UserProfiles.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -49,6 +51,19 @@ namespace DatingApp.Api.Controllers.V1
             var userProfile = UserProfileResponse.UserProfileDto(response.PayLoad);
 
             return Ok(userProfile);
+        }
+        [HttpPatch]
+        [Route(ApiRoutes.UserProfiles.IdRoute)]
+        [ValidateModel]
+        [ValidateGuid("id")]
+        public async Task<IActionResult> UpdateUserProfile(string id, UserProfileCreateUpdate updateProfile,CancellationToken cancellationToken)
+        {
+            var command = _mapper.Map<UpdateUserProfileBasicInfo>(updateProfile);
+            command.UserProfileId = Guid.Parse(id);
+            var response = await _mediator.Send(command,cancellationToken);
+
+            if (response.IsError) return HandleErrorResponse(response.Errors);
+            return NoContent();
         }
     }
 }
