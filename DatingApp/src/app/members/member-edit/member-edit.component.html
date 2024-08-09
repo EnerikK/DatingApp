@@ -70,10 +70,58 @@
                      name="currentCity"
               >
             </div>
+            <div class="d-flex align-items-center">
+              <label> Phone: </label>
+              <input type="text"
+                     [(ngModel)]="member.basicInfo.phone"
+                     class="form-control mx-2"
+                     name="Phone"
+              >
+            </div>
+            <div class="d-flex align-items-center">
+              <label> FirstName: </label>
+              <input type="text"
+                     [(ngModel)]="member.basicInfo.firstName"
+                     class="form-control mx-2"
+                     name="FirstName"
+              >
+            </div>
+            <div class="d-flex align-items-center">
+              <label> LastName: </label>
+              <input type="text"
+                     [(ngModel)]="member.basicInfo.lastName"
+                     class="form-control mx-2"
+                     name="LastName"
+              >
+            </div>
+            <div class="d-flex align-items-center">
+              <label> KnownAs: </label>
+              <input type="text"
+                     [(ngModel)]="member.basicInfo.knownAs"
+                     class="form-control mx-2"
+                     name="KnownAs"
+              >
+            </div>
+            <div class="d-flex align-items-center">
+              <label> EmailAddress: </label>
+              <input type="text"
+                     [(ngModel)]="member.basicInfo.emailAddress"
+                     class="form-control mx-2"
+                     name="EmailAddress"
+              >
+            </div>
+            <div class="d-flex align-items-center">
+              <label> Url: </label>
+              <input type="text"
+                     [(ngModel)]="member.basicInfo.url"
+                     class="form-control mx-2"
+                     name="Url"
+              >
+            </div>
           </form>
         </tab>
         <tab heading="Edit Photos">
-          <h1>Photo eidt will go here</h1>
+          <h1>Photo edit will go here</h1>
         </tab>
       </tabset>
     </div>

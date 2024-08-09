@@ -33,7 +33,6 @@ namespace DatingApp.Api.Controllers.V1
             var profiles = _mapper.Map<List<UserProfileResponse>>(response.PayLoad);
             return Ok(profiles);
         }
-
         [Route(ApiRoutes.UserProfiles.IdRoute)]
         [HttpGet]
         [ValidateGuid("id")]
@@ -62,7 +61,7 @@ namespace DatingApp.Api.Controllers.V1
             command.UserProfileId = Guid.Parse(id);
             var response = await _mediator.Send(command,cancellationToken);
 
-            if (response.IsError) return HandleErrorResponse(response.Errors);
+            if (response.IsError)  HandleErrorResponse(response.Errors);
             return NoContent();
         }
     }

@@ -5,7 +5,7 @@ import {MembersService} from "../../_services/members.service";
 import {TabsModule} from "ngx-bootstrap/tabs";
 import {FormsModule, NgForm} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
-import {MatGridTileHeaderCssMatStyler} from "@angular/material/grid-list";
+import {UserProfileUpdate} from "../../_models/UserProfileUpdate";
 
 @Component({
   selector: 'app-member-edit',
@@ -26,6 +26,7 @@ export class MemberEditComponent implements OnInit{
   }
 
   member?: Member;
+  UserProfileUpdate?: UserProfileUpdate;
   private accountService = inject(AccountService);
   private memberService = inject(MembersService);
   private toastr = inject(ToastrService);
@@ -44,10 +45,11 @@ export class MemberEditComponent implements OnInit{
 
   updateMember(){
     const user = this.accountService.currentUser();
+    const updateProfile = this.editForm?.value;
     if (!user) return;
-    this.memberService.updateMember(user.userProfileId).subscribe({
+    this.memberService.updateMember(user.userProfileId,updateProfile).subscribe({
       next: _ => {
-        this.toastr.success('Profile Update');
+        this.toastr.success('Profile Updated');
         this.editForm?.reset(this.member);
       }
     })

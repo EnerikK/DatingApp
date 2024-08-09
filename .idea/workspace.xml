@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Requests/UserProfileCreateUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Requests/UserProfileCreateUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/IdentityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/IdentityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/UserProfileMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/UserProfileMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/QueryHandler/GetUserProfileByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/QueryHandler/GetUserProfileByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/BasicInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/BasicInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/members.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/members.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/environments/environment.ts" afterDir="false" />
-    </list>
+    <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="More work on the Member Interface" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,8 +87,17 @@
       <workItem from="1722802088819" duration="547000" />
       <workItem from="1722802819841" duration="3600000" />
       <workItem from="1722866346062" duration="3938000" />
-      <workItem from="1722963824771" duration="6811000" />
+      <workItem from="1722963824771" duration="7003000" />
     </task>
+    <task id="LOCAL-00001" summary="More work on the Member Interface">
+      <option name="closed" value="true" />
+      <created>1722970854548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722970854548</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,5 +113,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="More work on the Member Interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="More work on the Member Interface" />
   </component>
 </project>
