@@ -10,7 +10,7 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
     {
         public UserProfile()
         {
-            
+            Photos = new List<Photos>();
         }
 
         public Guid UserProfileId { get; private set; }
@@ -18,7 +18,8 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public BasicInfo BasicInfo { get; private set; }
         public DateTime DateCreated { get; private set; }
         public DateTime LastModified { get; private set; }
-        
+        public List<Photos> Photos { get; private set; }
+
         //Factory Method
         public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)
         {
@@ -28,6 +29,7 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
                 BasicInfo = basicInfo,
                 DateCreated = DateTime.UtcNow,
                 LastModified = DateTime.UtcNow,
+                Photos = new List<Photos>()
             };
 
         }
@@ -36,6 +38,33 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         {
             BasicInfo = newInfo;
             LastModified = DateTime.UtcNow;
+        }
+        public void AddPhoto(Photos photo)
+        {
+            if (photo != null)
+            {
+                Photos.Add(photo);
+                LastModified = DateTime.UtcNow;
+            }
+        }
+        public void RemovePhoto(string photoId)
+        {
+            var photo = Photos.Find(p => p.Id == photoId);
+            if (photo != null)
+            {
+                Photos.Remove(photo);
+                LastModified = DateTime.UtcNow;
+            }
+        }
+        public void UpdatePhoto(Photos updatedPhoto)
+        {
+            var photo = Photos.Find(p => p.Id == updatedPhoto.Id);
+            if (photo != null)
+            {
+                photo.Url = updatedPhoto.Url;
+                photo.IsMain = updatedPhoto.IsMain;
+                LastModified = DateTime.UtcNow;
+            }
         }
     }
 }

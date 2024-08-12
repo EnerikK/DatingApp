@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
 
 namespace DatingApp.Api.Contracts.UserProfile.Requests
 {
@@ -28,8 +29,7 @@ namespace DatingApp.Api.Contracts.UserProfile.Requests
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-        public int PhotoId { get; set; }
-        public string Url { get; set; }
-        public bool IsMain { get; set; }
+        public List<Photos> Photos { get;  set; }
+
     }
 }

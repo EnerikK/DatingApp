@@ -85,9 +85,6 @@ namespace DatingApp.DataAccess.Migrations
                     BasicInfo_Introduction = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_Interests = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_LookingFor = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BasicInfo_PhotoId = table.Column<int>(type: "int", nullable: false),
-                    BasicInfo_Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BasicInfo_IsMain = table.Column<bool>(type: "bit", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -145,11 +142,38 @@ namespace DatingApp.DataAccess.Migrations
                 constraints: table =>
                 {
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Photo",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsMain = table.Column<bool>(type: "bit", nullable: false),
+                    UserProfileId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Photo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Photo_UserProfiles_UserProfileId",
+                        column: x => x.UserProfileId,
+                        principalTable: "UserProfiles",
+                        principalColumn: "UserProfileId");
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Photo_UserProfileId",
+                table: "Photo",
+                column: "UserProfileId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Photo");
+
             migrationBuilder.DropTable(
                 name: "RoleClaims");
 
@@ -163,9 +187,6 @@ namespace DatingApp.DataAccess.Migrations
                 name: "UserLogins");
 
             migrationBuilder.DropTable(
-                name: "UserProfiles");
-
-            migrationBuilder.DropTable(
                 name: "UserRoles");
 
             migrationBuilder.DropTable(
@@ -173,6 +194,9 @@ namespace DatingApp.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserTokens");
+
+            migrationBuilder.DropTable(
+                name: "UserProfiles");
         }
     }
 }

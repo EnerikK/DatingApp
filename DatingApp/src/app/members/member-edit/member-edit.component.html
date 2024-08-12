@@ -15,7 +15,7 @@
     </div>
     <div class="col-4">
       <div class="card">
-        <img src="{{member.basicInfo.url || './assets/user.png'}}"
+        <img src="{{member.basicInfo.photoUrl || './assets/user.png'}}"
              alt="{{member.basicInfo.knownAs}}"
              class="card-img img-thumbnail"
         >
@@ -113,7 +113,7 @@
             <div class="d-flex align-items-center">
               <label> Url: </label>
               <input type="text"
-                     [(ngModel)]="member.basicInfo.url"
+                     [(ngModel)]="member.basicInfo.photoUrl"
                      class="form-control mx-2"
                      name="Url"
               >

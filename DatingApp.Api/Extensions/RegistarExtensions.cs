@@ -1,4 +1,5 @@
-﻿using DatingApp.Api.Registers;
+﻿using DatingApp.Api.Options;
+using DatingApp.Api.Registers;
 
 namespace DatingApp.Api.Extensions
 {
@@ -13,7 +14,6 @@ namespace DatingApp.Api.Extensions
                 registrar.RegisterServices(builder);
             }
         }
-
         public static void RegisterPipelineComponents(this WebApplication app, Type scanningType)
         {
             var registrars = GetRegistrars<IWebApplicationRegistar>(scanningType);
@@ -22,7 +22,6 @@ namespace DatingApp.Api.Extensions
                 registrar.RegisterPipelineComponents(app);
             }
         }
-
         private static IEnumerable<T> GetRegistrars<T>(Type scanningType) where T : IRegistar
         {
             return scanningType.Assembly.GetTypes()

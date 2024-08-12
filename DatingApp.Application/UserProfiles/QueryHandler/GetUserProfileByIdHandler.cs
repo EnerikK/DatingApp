@@ -19,7 +19,7 @@ public class GetUserProfileByIdHandler : IRequestHandler<GetUserProfileById,Oper
     public async Task<OperationResult<UserProfileDto>> Handle(GetUserProfileById request, CancellationToken cancellationToken)
     {
         var result = new OperationResult<UserProfileDto>();
-        var profile  = await _dataContext.UserProfiles.FirstOrDefaultAsync(
+        var profile  = await _dataContext.UserProfiles.Include(x => x.Photos).FirstOrDefaultAsync(
             userProfile => userProfile.UserProfileId == request.UserProfileId,cancellationToken);
             
         if (profile is null) //Checking if the userprofile with this specific id exists

@@ -49,9 +49,10 @@ namespace DatingApp.Api.Contracts.Identity
         [MaxLength(200)]
         public string LookingFor { get; set; }
         
-        public int PhotoId { get; set; }
-        public string Url { get; set; }
-        public bool IsMain { get; set; }
+        public string PhotoUrl { get; set; }
+
+        public List<Photos> Photos { get;  set; }
+
 
     }
 }

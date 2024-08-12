@@ -1,4 +1,5 @@
 ﻿
+using DatingApp.Api.Options;
 using DatingApp.Application.UserProfiles.Queries;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

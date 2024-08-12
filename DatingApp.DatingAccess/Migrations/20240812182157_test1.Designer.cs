@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingApp.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240804122616_Initial")]
-    partial class Initial
+    [Migration("20240812182157_test1")]
+    partial class test1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,28 @@ namespace DatingApp.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.Photos", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("UserProfileId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserProfileId");
+
+                    b.ToTable("Photo");
+                });
 
             modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", b =>
                 {
@@ -214,6 +236,13 @@ namespace DatingApp.DataAccess.Migrations
                     b.ToTable("UserTokens");
                 });
 
+            modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.Photos", b =>
+                {
+                    b.HasOne("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", null)
+                        .WithMany("Photos")
+                        .HasForeignKey("UserProfileId");
+                });
+
             modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", b =>
                 {
                     b.OwnsOne("DatingApp.Domain.Aggregates.UserProfileAggregates.BasicInfo", "BasicInfo", b1 =>
@@ -244,9 +273,6 @@ namespace DatingApp.DataAccess.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<bool>("IsMain")
-                                .HasColumnType("bit");
-
                             b1.Property<string>("KnownAs")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
@@ -263,10 +289,7 @@ namespace DatingApp.DataAccess.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<int>("PhotoId")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("Url")
+                            b1.Property<string>("PhotoUrl")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
@@ -280,6 +303,11 @@ namespace DatingApp.DataAccess.Migrations
 
                     b.Navigation("BasicInfo")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.UserProfile", b =>
+                {
+                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,11 +6,9 @@ export interface BasicInfo {
   phone: string
   dateOfBirth: Date
   currentCity: string
+  photoUrl: string
   knownAs: string
   introduction: string
   interests: string
   lookingFor: string
-  photoId: number
-  url: string
-  isMain: boolean
 }

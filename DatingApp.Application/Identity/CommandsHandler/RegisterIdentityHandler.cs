@@ -16,6 +16,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.Application.Identity.CommandsHandler
 {
@@ -92,12 +93,29 @@ namespace DatingApp.Application.Identity.CommandsHandler
             {
                 var profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username,
                     request.Phone, request.DateOfBirth, request.CurrentCity,
-                    request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoId,request.Url,request.IsMain);
+                    request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoUrl);
                 
                 var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
+
+                foreach (var photoRequest in request.Photos)
+                {
+                    var photo = new Photos
+                    {
+                        Id = photoRequest.Id,
+                        Url = photoRequest.Url,
+                        IsMain = photoRequest.IsMain
+                    };
+                    _dataContext.Photos.Add(photo);
+                    profile.AddPhoto(photo);
+                }
+
                 _dataContext.UserProfiles.Add(profile);
                 await _dataContext.SaveChangesAsync(cancellationToken);
-                return profile;
+                var savedProfile = await _dataContext.UserProfiles
+                    .Include(p => p.Photos)
+                    .FirstOrDefaultAsync(p => p.UserProfileId == profile.UserProfileId, cancellationToken);
+                
+                return savedProfile;
 
             }
             catch (Exception e)

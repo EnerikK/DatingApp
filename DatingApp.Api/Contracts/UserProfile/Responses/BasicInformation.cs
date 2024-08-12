@@ -14,14 +14,11 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
         public string Phone { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string CurrentCity { get; set; }
+        public string PhotoUrl { get; set; }
         public string KnownAs { get; set; }
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-        public int PhotoId { get; set; }
-        public string Url { get; set; }
-        public bool IsMain { get; set; }
-
         public static BasicInformation UserInfoDto (UserInfoDto infoDto)
         {
             return new BasicInformation
@@ -36,9 +33,7 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
                 KnownAs = infoDto.KnownAs,
                 Interests = infoDto.Interests,
                 LookingFor = infoDto.LookingFor,
-                PhotoId = infoDto.PhotoId,
-                Url = infoDto.Url,
-                IsMain = infoDto.IsMain
+                PhotoUrl = infoDto.PhotoUrl
             };
         }
     }

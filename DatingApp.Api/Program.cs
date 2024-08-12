@@ -1,11 +1,14 @@
 using DatingApp.Api.Extensions;
+using DatingApp.Api.Options;
 using Microsoft.EntityFrameworkCore;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
 builder.Services.AddCors();
 builder.RegisterServices(typeof(Program));
+
 
 var app = builder.Build();
 

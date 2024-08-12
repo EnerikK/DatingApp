@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using DatingApp.Api.Options;
 using DatingApp.Application.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -7,13 +8,15 @@ namespace DatingApp.Api.Registers;
 
 public class IdentityRegistar : IWebApplicationBuilderRegistar
 {
-    public void RegisterServices(WebApplicationBuilder builder)
+
+    public void RegisterServices(WebApplicationBuilder builder )
     {
         var jwtSettings = new JWTSettings();
         builder.Configuration.Bind(nameof(jwtSettings),jwtSettings);
 
         var jwtSection = builder.Configuration.GetSection(nameof(jwtSettings));
         builder.Services.Configure<JWTSettings>(jwtSection);
+        
 
         builder.Services.AddAuthentication(auth =>
             {

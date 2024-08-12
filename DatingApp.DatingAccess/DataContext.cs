@@ -29,7 +29,6 @@ namespace DatingApp.DataAccess
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Ignore<BasicInfo>();
-            builder.Ignore<Photos>();
             builder.ApplyConfiguration(new UserProfileConfig());
             builder.ApplyConfiguration(new IdentityUserLoginConfig());
             builder.ApplyConfiguration(new IdentityUserRoleConfig());

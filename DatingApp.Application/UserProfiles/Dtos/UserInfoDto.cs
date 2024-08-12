@@ -17,13 +17,14 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string? Phone { get; private set; }
         public DateTime DateOfBirth { get; private set; }
         public string? CurrentCity { get; private set; }
+        public string PhotoUrl { get; set; }
         public string KnownAs { get; set; }
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-        public int PhotoId { get; set; }
-        public string Url { get; set; }
-        public bool IsMain { get; set; }
+        
+        public List<Photos> Photos { get;  set; }
+
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {
             return new UserInfoDto
@@ -38,10 +39,9 @@ namespace DatingApp.Application.UserProfiles.Dtos
                 Introduction = basicInfo.Introduction,
                 Interests = basicInfo.Interests,
                 LookingFor = basicInfo.LookingFor,
-                PhotoId = basicInfo.PhotoId,
-                Url = basicInfo.Url,
-                IsMain = basicInfo.IsMain
+                PhotoUrl = basicInfo.PhotoUrl
             };
         }
+        
     }
 }

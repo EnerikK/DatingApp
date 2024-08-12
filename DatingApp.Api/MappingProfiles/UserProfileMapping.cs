@@ -12,7 +12,13 @@ namespace DatingApp.Api.MappingProfiles
         public UserProfileMapping()
         {
             CreateMap<UserProfile, UserProfileResponse>();
-            CreateMap<PhotoDto, Photos>();
+            CreateMap<PhotoDto, Photos>()
+                .ForMember(dest => dest.Id, opt
+                    => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Url, opt
+                    => opt.MapFrom(src => src.Url))           
+                .ForMember(dest => dest.IsMain, opt
+                    => opt.MapFrom(src => src.IsMain));
             CreateMap<BasicInfo, BasicInformation>();
             CreateMap<UserProfileCreateUpdate, UpdateUserProfileBasicInfo>();
 

@@ -22,7 +22,8 @@ namespace DatingApp.Application.UserProfiles.QueryHandler
         public async Task<OperationResult<IEnumerable<UserProfile>>> Handle(GetAllUserProfiles request, CancellationToken cancellationToken)
         {
             var result = new OperationResult<IEnumerable<UserProfile>>();
-            result.PayLoad = await _dataContext.UserProfiles.ToListAsync(cancellationToken);
+            result.PayLoad = await _dataContext.UserProfiles
+                .Include(x => x.Photos).ToListAsync(cancellationToken);
             return result;
         }
     }

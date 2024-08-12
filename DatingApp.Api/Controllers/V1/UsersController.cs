@@ -2,8 +2,11 @@
 using DatingApp.Api.Contracts.UserProfile.Requests;
 using DatingApp.Api.Contracts.UserProfile.Responses;
 using DatingApp.Api.Filters;
+using DatingApp.Api.Services;
+using DatingApp.Application.Identity.Dtos;
 using DatingApp.Application.UserProfiles.Commands;
 using DatingApp.Application.UserProfiles.Queries;
+using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -19,11 +22,13 @@ namespace DatingApp.Api.Controllers.V1
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private readonly IPhotoService _photoService;
 
-        public UsersController(IMediator mediator, IMapper mapper)
+        public UsersController(IMediator mediator, IMapper mapper,IPhotoService photoService)
         {
             _mediator = mediator;
             _mapper = mapper;
+            _photoService = photoService;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllProfiles(CancellationToken cancellationToken)
@@ -62,6 +67,13 @@ namespace DatingApp.Api.Controllers.V1
             var response = await _mediator.Send(command,cancellationToken);
 
             if (response.IsError)  HandleErrorResponse(response.Errors);
+            return NoContent();
+        }
+
+        [HttpPost]
+        [Route(ApiRoutes.UserProfiles.AddPhoto)]
+        public async Task<IActionResult> AddPhoto(IFormFile file)
+        {
             return NoContent();
         }
     }

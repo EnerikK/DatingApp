@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DatingApp.Api.Options;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 
 namespace DatingApp.Api.Registers
 {
     public class MVCRegistar : IWebApplicationBuilderRegistar
     {
+ 
         public void RegisterServices(WebApplicationBuilder builder)
         {
+
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -30,10 +33,9 @@ namespace DatingApp.Api.Registers
                 config.GroupNameFormat = "'v'VVV";
                 config.SubstituteApiVersionInUrl = true;
             });
-
+            
             builder.Services.AddEndpointsApiExplorer();
 
         }
-
     }
 }
