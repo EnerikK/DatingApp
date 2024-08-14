@@ -29,7 +29,8 @@ namespace DatingApp.Api.Contracts.UserProfile.Requests
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
-        public List<Photos> Photos { get;  set; }
+        public string PhotoUrl { get; set; }
+        public List<Photos>? Photos { get;  set; }
 
     }
 }

@@ -9,10 +9,9 @@ public class IdentityProfiles : Profile
     public IdentityProfiles()
     {
         CreateMap<UserProfile, IdentityUserProfileDto>()
-            .ForMember(dest => dest.Phone,
-                opt
-                    => opt.MapFrom(
-                        src => src.BasicInfo.Phone)).ForMember(dest => dest.CurrentCity, opt
+            .ForMember(dest => dest.Phone, opt
+                => opt.MapFrom(src => src.BasicInfo.Phone))
+            .ForMember(dest => dest.CurrentCity, opt
                 => opt.MapFrom(src => src.BasicInfo.CurrentCity))
             .ForMember(dest => dest.EmailAddress, opt
                 => opt.MapFrom(src => src.BasicInfo.EmailAddress))

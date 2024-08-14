@@ -17,6 +17,7 @@ export class MemberListComponent implements OnInit{
   protected memberService = inject(MembersService);
 
   ngOnInit(): void {
+    console.log(this.memberService.members());
     if (this.memberService.members().length === 0) this.loadMembers();
     }
 

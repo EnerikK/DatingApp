@@ -12,7 +12,7 @@ namespace DatingApp.Application.UserProfiles.Dtos
     {
         public Guid UserProfileId { get; set; }
         public UserInfoDto? UserInfo { get; set; }
-        public List<Photos> Photos { get;  set; }
+        public List<Photos>? Photos { get;  set; }
 
         public static UserProfileDto FromUserProfile(UserProfile profile)
         {

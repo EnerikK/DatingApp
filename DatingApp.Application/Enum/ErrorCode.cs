@@ -12,6 +12,7 @@ namespace DatingApp.Application.Enum
         ServerError = 500,
         
         IdentityUserDoesNotExist = 203,
+        PhotoUploadFailed = 204,
         
         UnauthorizedAccountRemoval = 303,
         

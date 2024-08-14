@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
 using DatingApp.Api.Options;
-using DatingApp.Api.Services;
 using DatingApp.Application.Services;
 
 namespace DatingApp.Api.Registers;

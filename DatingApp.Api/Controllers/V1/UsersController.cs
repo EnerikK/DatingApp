@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using DatingApp.Api.Contracts.UserProfile.Requests;
 using DatingApp.Api.Contracts.UserProfile.Responses;
+using DatingApp.Api.Extensions;
 using DatingApp.Api.Filters;
-using DatingApp.Api.Services;
 using DatingApp.Application.Identity.Dtos;
+using DatingApp.Application.Services;
 using DatingApp.Application.UserProfiles.Commands;
 using DatingApp.Application.UserProfiles.Queries;
 using DatingApp.Domain.Aggregates.UserProfileAggregates;
@@ -66,15 +67,27 @@ namespace DatingApp.Api.Controllers.V1
             command.UserProfileId = Guid.Parse(id);
             var response = await _mediator.Send(command,cancellationToken);
 
-            if (response.IsError)  HandleErrorResponse(response.Errors);
+            if (response.IsError) return HandleErrorResponse(response.Errors);
             return NoContent();
         }
-
         [HttpPost]
-        [Route(ApiRoutes.UserProfiles.AddPhoto)]
-        public async Task<IActionResult> AddPhoto(IFormFile file)
+        [Route(ApiRoutes.UserProfiles.IdRoute)]
+        [ValidateGuid("id")]
+        public async Task<IActionResult> AddPhoto(string id, IFormFile file,CancellationToken cancellationToken)
         {
-            return NoContent();
+            var photo = new Photos();
+            var command = new AddPhoto
+            {
+                UserProfileId = Guid.Parse(id),
+                File = file
+            };
+            var response = await _mediator.Send(command, cancellationToken);
+
+            if (response.IsError) return HandleErrorResponse(response.Errors);
+            return CreatedAtAction(nameof(GetUserProfileById), new { id = User.Identity },
+                _mapper.Map<PhotoDto>(response.PayLoad));
+          //  return Ok(response.PayLoad);
+
         }
     }
 }

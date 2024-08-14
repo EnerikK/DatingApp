@@ -23,8 +23,6 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string Interests { get; set; }
         public string LookingFor { get; set; }
         
-        public List<Photos> Photos { get;  set; }
-
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {
             return new UserInfoDto

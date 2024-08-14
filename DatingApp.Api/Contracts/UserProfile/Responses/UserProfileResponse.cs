@@ -9,7 +9,7 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
         public BasicInformation BasicInfo { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime LastModified { get; set; }
-        public List<Photos> Photos { get;  set; }
+        public List<Photos>? Photos { get;  set; }
 
 
         public static UserProfileResponse UserProfileDto(UserProfileDto profile)

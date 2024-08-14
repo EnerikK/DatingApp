@@ -51,7 +51,7 @@ namespace DatingApp.Api.Contracts.Identity
         
         public string PhotoUrl { get; set; }
 
-        public List<Photos> Photos { get;  set; }
+        public List<Photos>? Photos { get;  set; }
 
 
     }

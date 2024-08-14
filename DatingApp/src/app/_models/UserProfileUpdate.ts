@@ -1,3 +1,4 @@
+import {Photo} from "./Photo";
 
 export interface UserProfileUpdate {
   firstName: string;
@@ -10,7 +11,5 @@ export interface UserProfileUpdate {
   introduction: string;
   interests: string;
   lookingFor: string;
-  photoId: number;
-  url: string;
-  isMain: boolean;
+  photos: Photo[]
 }

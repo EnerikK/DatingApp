@@ -6,51 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="Fixing some bugs on the edit profile and adding funny spinner on loading screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/ApiRoutes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/ApiRoutes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Requests/UserProfileCreateUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Requests/UserProfileCreateUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/BasicInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/BasicInformation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/UserProfileResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/UserProfileResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/UsersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Extensions/RegistarExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Extensions/RegistarExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/UserProfileMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/UserProfileMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Options/CloudinarySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Options/CloudinarySettings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/ApplicationLayerRegistar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/ApplicationLayerRegistar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/BogardRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/BogardRegister.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/DbRegistar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/DbRegistar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/IdentityRegistar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/IdentityRegistar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/MVCRegistar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/MVCRegistar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/SwaggerRegistar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/SwaggerRegistar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Services/IPhotoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Services/IPhotoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Services/PhotoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Services/PhotoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Enum/ErrorCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Enum/ErrorCode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Commands/RegisterIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Commands/RegisterIdentity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/RegisterIdentityHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/RegisterIdentityHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/PhotoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/PhotoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/MappingProfiles/UserProfileMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/MappingProfiles/UserProfileMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/UpdateUserProfileBasicInfoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/UpdateUserProfileBasicInfoHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/UpdateUserProfileBasicInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/UpdateUserProfileBasicInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/AddPhotoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/AddPhotoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/AddPhoto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/AddPhoto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserInfoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserInfoDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserProfileDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/QueryHandler/GetAllUserProfilesHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/QueryHandler/GetAllUserProfilesHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/QueryHandler/GetUserProfileByIdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/QueryHandler/GetUserProfileByIdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.DatingAccess/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240804122616_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240804122616_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/BasicInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/BasicInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/Photos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/Photos.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/BasicInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/BasicInfo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/Member.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/Member.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/UserProfileUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/UserProfileUpdate.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-edit/member-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-edit/member-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/nav/nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +135,8 @@
       <workItem from="1723299200483" duration="600000" />
       <workItem from="1723410680111" duration="1267000" />
       <workItem from="1723485964356" duration="1648000" />
+      <workItem from="1723559804804" duration="152000" />
+      <workItem from="1723665525896" duration="1962000" />
     </task>
     <task id="LOCAL-00001" summary="More work on the Member Interface">
       <option name="closed" value="true" />

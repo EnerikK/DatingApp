@@ -31,6 +31,7 @@ export class MemberDetailComponent implements OnInit{
           this.member = member
         }
       });
+
   }
 
 

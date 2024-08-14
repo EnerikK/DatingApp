@@ -1,6 +1,7 @@
 ﻿using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Http;
 
-namespace DatingApp.Api.Services;
+namespace DatingApp.Application.Services;
 
 public interface IPhotoService
 {

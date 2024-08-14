@@ -33,4 +33,8 @@
     <ProjectReference Include="..\DatingApp.DatingAccess\DatingApp.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
