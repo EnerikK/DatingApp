@@ -17,11 +17,11 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string? Phone { get; private set; }
         public DateTime DateOfBirth { get; private set; }
         public string? CurrentCity { get; private set; }
-        public string PhotoUrl { get; set; }
-        public string KnownAs { get; set; }
-        public string Introduction { get; set; }
-        public string Interests { get; set; }
-        public string LookingFor { get; set; }
+        public string? PhotoUrl { get; set; }
+        public string? KnownAs { get; set; }
+        public string? Introduction { get; set; }
+        public string? Interests { get; set; }
+        public string? LookingFor { get; set; }
         
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {

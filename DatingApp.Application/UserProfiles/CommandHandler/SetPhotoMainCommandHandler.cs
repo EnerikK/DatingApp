@@ -4,56 +4,54 @@ using DatingApp.Application.Models;
 using DatingApp.Application.Services;
 using DatingApp.Application.UserProfiles.Commands;
 using DatingApp.DataAccess;
-using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.Application.UserProfiles.CommandHandler;
 
-public class AddPhotoHandler : IRequestHandler<AddPhoto,OperationResult<PhotoDto>>
+public class SetPhotoMainCommandHandler : IRequestHandler<SetPhotoMainCommand,OperationResult<PhotoDto>>
 {
     private readonly DataContext _dataContext;
     private readonly IPhotoService _photoService;
-    public AddPhotoHandler(DataContext dataCtx,IPhotoService photoService)
+    
+    public SetPhotoMainCommandHandler(DataContext dataCtx,IPhotoService photoService)
     {
         _dataContext = dataCtx;
         _photoService = photoService;
     }
-    public async Task<OperationResult<PhotoDto>> Handle(AddPhoto request, CancellationToken cancellationToken)
+    public async Task<OperationResult<PhotoDto>> Handle(SetPhotoMainCommand request, CancellationToken cancellationToken)
     {
         var result = new OperationResult<PhotoDto>();
-        
-        var userProfile = await _dataContext.UserProfiles
-            .FirstOrDefaultAsync(userProfile => userProfile.UserProfileId == request.UserProfileId,cancellationToken: cancellationToken);
 
+        var userProfile = await _dataContext.UserProfiles.Include(x => x.Photos)
+            .FirstOrDefaultAsync(userProfile => userProfile.UserProfileId == request.UserProfileId,cancellationToken: cancellationToken);
+        
         if (userProfile is null)
         {
             result.AddError(ErrorCode.NotFound,string.Format(UserProfileErrorMessage.UserProfileNotFound,request.UserProfileId));
             return result;
         }
-        var photoServiceResult = await _photoService.AddPhotoAsync(request.File);
-        if (photoServiceResult is null || string.IsNullOrEmpty(photoServiceResult.PublicId))
+
+        var photo = userProfile.Photos.FirstOrDefault(x => x.Id == request.photoId);
+        if (photo is null || photo.IsMain)
         {
-            result.AddError(ErrorCode.PhotoUploadFailed, "Photo upload failed.");
+            result.AddError(ErrorCode.NotFound,string.Format(UserProfileErrorMessage.CannotUseThisPhoto));
             return result;
         }
-        
-        var photo = new Photos()
-        {
-            Url = photoServiceResult.SecureUrl.AbsoluteUri
-        };
 
-        userProfile.AddPhoto(photo);
+        var currentMain = userProfile.Photos.FirstOrDefault(x => x.IsMain);
+        if (currentMain != null) currentMain.IsMain = false;
+        photo.IsMain = true;
         
         await _dataContext.SaveChangesAsync(cancellationToken);
-        
         result.PayLoad = new PhotoDto
         {
             Id = photo.Id,
-            Url = photo.Url
+            Url = photo.Url,
+            IsMain = photo.IsMain
         };
-
+        
         return result;
+
     }
 }

@@ -23,7 +23,7 @@ export class MembersService {
     if (member !== undefined) return of(member);
     return this.http.get<Member>(this.baseUrl + 'v1.0/Users/' + userProfileId);
   }
-  updateMember(userProfileId: string , updateProfile: UserProfileUpdate){
+  updateMember( userProfileId: string , updateProfile: UserProfileUpdate){
     return this.http.patch<Member>(this.baseUrl + `v1.0/Users/${userProfileId}`, updateProfile);
   }
 }

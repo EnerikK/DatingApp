@@ -81,6 +81,7 @@ namespace DatingApp.DataAccess.Migrations
                     BasicInfo_Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BasicInfo_CurrentCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BasicInfo_PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_KnownAs = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_Introduction = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BasicInfo_Interests = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -147,8 +148,9 @@ namespace DatingApp.DataAccess.Migrations
                 name: "Photo",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsMain = table.Column<bool>(type: "bit", nullable: false),
                     UserProfileId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
@@ -166,6 +168,7 @@ namespace DatingApp.DataAccess.Migrations
                 name: "IX_Photo_UserProfileId",
                 table: "Photo",
                 column: "UserProfileId");
+            migrationBuilder.Sql("SET IDENTITY_INSERT Photo ON");
         }
 
         /// <inheritdoc />

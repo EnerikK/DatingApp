@@ -7,6 +7,8 @@
         {
             public const string IdRoute = "{id}";
             public const string AddPhoto = "AddPhoto";
+            public const string SetPhotoMain = "SetPhotoMain";
+
         }
         public static class Identity
         {

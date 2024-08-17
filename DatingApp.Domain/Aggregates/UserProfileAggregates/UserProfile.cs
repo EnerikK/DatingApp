@@ -49,7 +49,7 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         }
         public void RemovePhoto(string photoId)
         {
-            var photo = Photos.Find(p => p.Id == photoId);
+            var photo = Photos.Find(p => Equals(p.Id, photoId));
             if (photo != null)
             {
                 Photos.Remove(photo);

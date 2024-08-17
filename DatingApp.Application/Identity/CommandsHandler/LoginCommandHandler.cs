@@ -37,7 +37,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand,OperationResult<
             if (_result.IsError) return _result;
             
             var userProfile =
-                await _dataContext.UserProfiles.FirstOrDefaultAsync(userP => userP.IdentityId == identityUser.Id,cancellationToken);
+                await _dataContext.UserProfiles.Include(x => x.Photos).FirstOrDefaultAsync(userP => userP.IdentityId == identityUser.Id,cancellationToken);
 
             _result.PayLoad = _mapper.Map<IdentityUserProfileDto>(userProfile);
             _result.PayLoad.UserName = identityUser.UserName;

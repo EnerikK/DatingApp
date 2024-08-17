@@ -1,0 +1,10 @@
+.my-drop-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+.nv-file-over {
+  border: dotted 3px red;
+}

@@ -9,45 +9,45 @@ namespace DatingApp.Api.Contracts.Identity
     {
         [Required]
         [EmailAddress]
-        public string Username { get; set; }
+        public string? Username { get; set; }
 
         [Required]
-        public string Password { get; set; }
-
-        [Required]
-        [MinLength(3)]
-        [MaxLength(50)]
-        public string FirstName { get; set; }
+        public string? Password { get; set; }
 
         [Required]
         [MinLength(3)]
         [MaxLength(50)]
-        public string LastName { get; set; }
+        public string?FirstName { get; set; }
+
+        [Required]
+        [MinLength(3)]
+        [MaxLength(50)]
+        public string? LastName { get; set; }
         
         [MinLength(3)]
         [MaxLength(50)]
-        public string KnownAs { get; set; }
+        public string? KnownAs { get; set; }
 
         [Required]
         public DateTime DateOfBirth { get; set; }
 
         [Required]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
         
         [Required]
-        public string CurrentCity { get; set; }
+        public string? CurrentCity { get; set; }
         
         [MinLength(5)]
         [MaxLength(200)]
-        public string Introduction { get; set; }
+        public string? Introduction { get; set; }
 
         [MinLength(5)]
         [MaxLength(200)]
-        public string Interests { get; set; }
+        public string? Interests { get; set; }
         
         [MinLength(5)]
         [MaxLength(200)]
-        public string LookingFor { get; set; }
+        public string? LookingFor { get; set; }
         
         public string PhotoUrl { get; set; }
 

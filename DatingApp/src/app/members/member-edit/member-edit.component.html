@@ -15,7 +15,7 @@
     </div>
     <div class="col-4">
       <div class="card">
-        <img src="{{member.basicInfo.PhotoUrl }}"
+        <img src="{{member.basicInfo.photoUrl}}"
              alt="{{member.basicInfo.knownAs}}"
              class="card-img img-thumbnail"
         >
@@ -113,16 +113,18 @@
             <div class="d-flex align-items-center">
               <label> PhotoUrl: </label>
               <input type="text"
-                     [(ngModel)]="member.basicInfo.PhotoUrl"
+                     [(ngModel)]="member.basicInfo.photoUrl"
                      class="form-control mx-2"
                      name="PhotoUrl"
               >
             </div>
-
           </form>
         </tab>
         <tab heading="Edit Photos">
-          <h1>Photo edit will go here</h1>
+          <app-photo-editor
+            [member]="member"
+            (memberChange)="onMemberChange($event)"
+          ></app-photo-editor>
         </tab>
       </tabset>
     </div>

@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "guid-typescript": "^1.0.9",
     "ng-gallery": "^11.0.0",
+    "ng2-file-upload": "^7.0.1",
     "ngx-bootstrap": "^18.0.2",
     "ngx-spinner": "^17.0.0",
     "ngx-toastr": "^19.0.0",

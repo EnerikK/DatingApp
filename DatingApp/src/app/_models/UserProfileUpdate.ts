@@ -11,5 +11,6 @@ export interface UserProfileUpdate {
   introduction: string;
   interests: string;
   lookingFor: string;
-  photos: Photo[]
+  photoUrl: string
+  photos: Photo
 }

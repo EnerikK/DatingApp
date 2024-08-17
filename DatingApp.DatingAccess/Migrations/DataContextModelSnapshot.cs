@@ -24,14 +24,16 @@ namespace DatingApp.DataAccess.Migrations
 
             modelBuilder.Entity("DatingApp.Domain.Aggregates.UserProfileAggregates.Photos", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id"));
 
                     b.Property<bool>("IsMain")
                         .HasColumnType("bit");
 
                     b.Property<string>("Url")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("UserProfileId")

@@ -4,35 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="Fixing some bugs on the edit profile and adding funny spinner on loading screen">
+    <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="Upload picture functionality on the cloud and fix some bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/ApiRoutes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/ApiRoutes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/AuthenticationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/AuthenticationResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/IdentityUserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/Login.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/Login.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/Identity/UserRegistration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Requests/UserProfileCreateUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Requests/UserProfileCreateUpdate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/UserProfileResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/UserProfileResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/BasicInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/BasicInformation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/UsersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/DatingApp.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/MappingProfiles/IdentityProfiles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Options/CloudinarySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Options/CloudinarySettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Registers/ApplicationLayerRegistar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Registers/ApplicationLayerRegistar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Services/IPhotoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Services/IPhotoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Services/PhotoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Services/PhotoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/DatingApp.Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/Enum/ErrorCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Enum/ErrorCode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Commands/RegisterIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Commands/RegisterIdentity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/LoginCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/LoginCommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/IdentityUserProfileDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/PhotoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/Dtos/PhotoDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/AddPhotoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/AddPhotoHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/UpdateUserProfileBasicInfoHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/CommandHandler/UpdateUserProfileBasicInfoHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/AddPhoto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/AddPhoto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/CreateUserCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/CreateUserCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/UpdateUserProfileBasicInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Commands/UpdateUserProfileBasicInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserInfoDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserInfoDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserProfileDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/UserProfileErrorMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/UserProfileErrorMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240812130810_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240812130810_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240812182157_test1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/20240812182157_test1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.DatingAccess/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/Photos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/Photos.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/BasicInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/BasicInfo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_models/UserProfileUpdate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_models/UserProfileUpdate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/members.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/members.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/errors/test-errors/test-errors.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/errors/test-errors/test-errors.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-detail/member-detail.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-edit/member-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-edit/member-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-list/member-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-edit/member-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-edit/member-edit.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +148,9 @@
       <workItem from="1723410680111" duration="1267000" />
       <workItem from="1723485964356" duration="1648000" />
       <workItem from="1723559804804" duration="152000" />
-      <workItem from="1723665525896" duration="1962000" />
+      <workItem from="1723665525896" duration="2781000" />
+      <workItem from="1723838168954" duration="9876000" />
+      <workItem from="1723924172329" duration="2159000" />
     </task>
     <task id="LOCAL-00001" summary="More work on the Member Interface">
       <option name="closed" value="true" />
@@ -154,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723196482205</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Upload picture functionality on the cloud and fix some bugs">
+      <option name="closed" value="true" />
+      <created>1723669048741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723669048741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +196,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="More work on the Member Interface" />
     <MESSAGE value="Fixing some bugs on the edit profile and adding funny spinner on loading screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing some bugs on the edit profile and adding funny spinner on loading screen" />
+    <MESSAGE value="Upload picture functionality on the cloud and fix some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload picture functionality on the cloud and fix some bugs" />
   </component>
 </project>

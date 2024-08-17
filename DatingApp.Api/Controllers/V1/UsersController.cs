@@ -71,23 +71,36 @@ namespace DatingApp.Api.Controllers.V1
             return NoContent();
         }
         [HttpPost]
-        [Route(ApiRoutes.UserProfiles.IdRoute)]
-        [ValidateGuid("id")]
-        public async Task<IActionResult> AddPhoto(string id, IFormFile file,CancellationToken cancellationToken)
+        [Route(ApiRoutes.UserProfiles.AddPhoto)]
+        public async Task<IActionResult> AddPhoto(string identity, IFormFile file,CancellationToken cancellationToken)
         {
             var photo = new Photos();
             var command = new AddPhoto
             {
-                UserProfileId = Guid.Parse(id),
+                UserProfileId = Guid.Parse(identity),
                 File = file
             };
             var response = await _mediator.Send(command, cancellationToken);
 
             if (response.IsError) return HandleErrorResponse(response.Errors);
-            return CreatedAtAction(nameof(GetUserProfileById), new { id = User.Identity },
-                _mapper.Map<PhotoDto>(response.PayLoad));
-          //  return Ok(response.PayLoad);
+            /*return CreatedAtAction(nameof(GetUserProfileById), new { id = User.Identity },
+                _mapper.Map<PhotoDto>(response.PayLoad));*/
+            return Ok(response.PayLoad);
+        }
 
+        [HttpPut]
+        [Route(ApiRoutes.UserProfiles.SetPhotoMain)]
+        public async Task<IActionResult> SetMainPhoto(string identity,int photoId,CancellationToken cancellationToken)
+        {
+            var command = new SetPhotoMainCommand
+            {
+                UserProfileId = Guid.Parse(identity),
+                photoId = photoId
+            };
+            var response = await _mediator.Send(command, cancellationToken);
+
+            if (response.IsError) return HandleErrorResponse(response.Errors);
+            return Ok(response.PayLoad);
         }
     }
 }
