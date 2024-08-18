@@ -27,6 +27,10 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public string LookingFor { get; set; }
 
         //Factory Method
+        public void UpdatePhotoUrl(string newUrl)
+        {
+            PhotoUrl = newUrl;
+        }
         public static BasicInfo CreateBasicInfo(
             string firstName, string lastName, string emailAddress,
             string phone, DateTime dateOfBirth,string currentCity,

@@ -4,6 +4,7 @@ import {environment} from '../../environments/environment'
 import {Member} from '../_models/Member';
 import { UserProfileUpdate } from '../_models/UserProfileUpdate'
 import {of, tap} from "rxjs";
+import {Photo} from "../_models/Photo";
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +27,22 @@ export class MembersService {
   updateMember( userProfileId: string , updateProfile: UserProfileUpdate){
     return this.http.patch<Member>(this.baseUrl + `v1.0/Users/${userProfileId}`, updateProfile);
   }
+  //${this.baseUrl}v1.0/Users/AddPhoto?identity=${userId}
+  setMainPhoto(userProfileId: string, photo: Photo){
+    return this.http.put(`${this.baseUrl}v1.0/Users/SetPhotoMain?identity=${userProfileId}&photoId=${photo.id}`, {}).pipe(
+      tap(() => {
+        this.members.update(members => members.map(m => {
+          if (m.photos.includes(photo)){
+            m.basicInfo.photoUrl = photo.url
+          }
+          return m;
+        }))
+      })
+    )
+  }
+
+  deletePhoto(userProfileId: string, photo: Photo) {
+    return this.http.delete(`${this.baseUrl}v1.0/Users/DeletePhoto?identity=${userProfileId}&photoId=${photo.id}`);
+  }
+
 }

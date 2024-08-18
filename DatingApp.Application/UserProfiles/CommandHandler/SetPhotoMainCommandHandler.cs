@@ -40,10 +40,12 @@ public class SetPhotoMainCommandHandler : IRequestHandler<SetPhotoMainCommand,Op
         }
 
         var currentMain = userProfile.Photos.FirstOrDefault(x => x.IsMain);
-        if (currentMain != null) currentMain.IsMain = false;
+        if (currentMain != null) currentMain.IsMain = false; 
         photo.IsMain = true;
         
+        userProfile.BasicInfo.PhotoUrl = photo.Url;
         await _dataContext.SaveChangesAsync(cancellationToken);
+        
         result.PayLoad = new PhotoDto
         {
             Id = photo.Id,

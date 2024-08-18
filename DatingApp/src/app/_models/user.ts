@@ -5,4 +5,5 @@ export interface User {
   token: string,
   firstName: string,
   userProfileId: string
+  photoUrl: string
 }

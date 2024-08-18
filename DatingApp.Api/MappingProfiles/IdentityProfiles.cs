@@ -30,7 +30,7 @@ public class IdentityProfiles : Profile
             .ForMember(dest => dest.LookingFor, opt
                 => opt.MapFrom(src => src.BasicInfo.LookingFor))
             .ForMember(dest => dest.PhotoUrl, opt
-                => opt.MapFrom(src => src.Photos.FirstOrDefault(x=> x.IsMain)!.Url))
+                => opt.MapFrom(src => src.Photos!.FirstOrDefault(x=> x.IsMain)!.Url))
             .ForMember(dest => dest.Photos, opt
                 => opt.MapFrom(src => src.Photos));
 

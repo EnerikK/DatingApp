@@ -102,5 +102,19 @@ namespace DatingApp.Api.Controllers.V1
             if (response.IsError) return HandleErrorResponse(response.Errors);
             return Ok(response.PayLoad);
         }
+
+        [HttpDelete]
+        [Route(ApiRoutes.UserProfiles.DeletePhoto)]
+        public async Task<IActionResult> DeletePhoto(string identity, int photoId, CancellationToken cancellationToken)
+        {
+            var command = new DeletePhotoCommand
+            {
+                UserProfileId = Guid.Parse(identity),
+                photoId = photoId
+            };
+            var response = await _mediator.Send(command, cancellationToken);
+            if (response.IsError) return HandleErrorResponse(response.Errors);
+            return Ok(response.PayLoad);
+        }
     }
 }
