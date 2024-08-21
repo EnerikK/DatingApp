@@ -19,6 +19,7 @@ namespace DatingApp.Api.Contracts.Identity
         public string? Introduction { get; set; }
         public string? Interests { get; set; }
         public string? LookingFor { get; set; }
+        public string? Gender { get; set; }
         public List<Photos>? Photos { get;  set; }
 
 

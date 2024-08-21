@@ -25,6 +25,7 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public string Introduction { get; set; }
         public string Interests { get; set; }
         public string LookingFor { get; set; }
+        public string Gender { get; set; }
 
         //Factory Method
         public void UpdatePhotoUrl(string newUrl)
@@ -34,7 +35,7 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public static BasicInfo CreateBasicInfo(
             string firstName, string lastName, string emailAddress,
             string phone, DateTime dateOfBirth,string currentCity,
-            string knownAs, string introduction, string interests, string lookingFor,string photoUrl)
+            string knownAs, string introduction, string interests, string lookingFor,string photoUrl,string gender)
         {
             var validator = new BasicInfoValidator();
 
@@ -50,7 +51,8 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
                 Introduction = introduction,
                 Interests = interests,
                 LookingFor = lookingFor,
-                PhotoUrl = photoUrl
+                PhotoUrl = photoUrl,
+                Gender = gender
             };
 
             var validationResult = validator.Validate(ObjToValidate);

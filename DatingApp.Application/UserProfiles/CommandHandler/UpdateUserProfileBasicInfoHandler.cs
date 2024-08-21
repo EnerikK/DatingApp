@@ -36,7 +36,7 @@ internal class UpdateUserProfileBasicInfoHandler : IRequestHandler<UpdateUserPro
 
             var basicInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName
                 , request.EmailAddress, request.Phone, request.DateOfBirth, request.CurrentCity,
-                request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoUrl);
+                request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoUrl,request.Gender);
 
             userProfile.UpdateBasicInfo(basicInfo);
 

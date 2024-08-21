@@ -27,6 +27,7 @@ namespace DatingApp.Api.Contracts.UserProfile.Requests
         public string? Interests { get; set; }
         public string? LookingFor { get; set; }
         public string? PhotoUrl { get; set; }
+        public string? Gender { get; set; }
         public List<Photos>? Photos { get;  set; }
 
     }

@@ -19,6 +19,7 @@ public class UpdateUserProfileBasicInfo : IRequest<OperationResult<UserProfile>>
     public string? Introduction { get; set; }
     public string? Interests { get; set; }
     public string? LookingFor { get; set; }
+    public string? Gender { get; set; }
     public IFormFile? File { get; set; }
 
 }

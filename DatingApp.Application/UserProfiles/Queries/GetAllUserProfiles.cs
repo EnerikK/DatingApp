@@ -6,11 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatingApp.Application.UserProfiles.Helper;
 
 namespace DatingApp.Application.UserProfiles.Queries
 {
-    public class GetAllUserProfiles : IRequest<OperationResult<IEnumerable<UserProfile>>>
+    public class GetAllUserProfiles : IRequest<OperationResult<PagedList<UserProfile>>>
     {
-
+        public UserParams userParams;
+        
     }
 }

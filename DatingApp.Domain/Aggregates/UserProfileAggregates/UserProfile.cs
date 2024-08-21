@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatingApp.Domain.Extensions;
 
 namespace DatingApp.Domain.Aggregates.UserProfileAggregates
 {
@@ -33,7 +34,12 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
             };
 
         }
+
         //Public Method 
+        public int GetAge()
+        {
+            return BasicInfo.DateOfBirth.CalculateAge();
+        }
         public void UpdateBasicInfo(BasicInfo newInfo)
         {
             BasicInfo = newInfo;

@@ -6,6 +6,7 @@ using DatingApp.Api.Filters;
 using DatingApp.Application.Identity.Dtos;
 using DatingApp.Application.Services;
 using DatingApp.Application.UserProfiles.Commands;
+using DatingApp.Application.UserProfiles.Helper;
 using DatingApp.Application.UserProfiles.Queries;
 using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using MediatR;
@@ -32,11 +33,17 @@ namespace DatingApp.Api.Controllers.V1
             _photoService = photoService;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllProfiles(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetAllProfiles([FromQuery] UserParams userParams,CancellationToken cancellationToken)
         {
-            var query = new GetAllUserProfiles();
+            var query = new GetAllUserProfiles { userParams = userParams };
             var response = await _mediator.Send(query, cancellationToken);
-            var profiles = _mapper.Map<List<UserProfileResponse>>(response.PayLoad);
+            
+            if (response.IsError) return HandleErrorResponse(response.Errors);
+
+            var pagedList = response.PayLoad as PagedList<UserProfile>;
+           
+            var profiles = _mapper.Map<List<UserProfileResponse>>(pagedList);
+            Response.AddPaginationHeader(pagedList);
             return Ok(profiles);
         }
         [Route(ApiRoutes.UserProfiles.IdRoute)]
@@ -52,6 +59,8 @@ namespace DatingApp.Api.Controllers.V1
             var response = await _mediator.Send(query, cancellationToken);
 
             if (response.IsError) return HandleErrorResponse(response.Errors);
+            
+            
 
             var userProfile = UserProfileResponse.UserProfileDto(response.PayLoad);
 

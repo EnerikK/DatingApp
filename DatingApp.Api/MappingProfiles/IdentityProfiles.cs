@@ -29,6 +29,8 @@ public class IdentityProfiles : Profile
                 => opt.MapFrom(src => src.BasicInfo.Interests))
             .ForMember(dest => dest.LookingFor, opt
                 => opt.MapFrom(src => src.BasicInfo.LookingFor))
+            .ForMember(dest => dest.Gender, opt
+                => opt.MapFrom(src => src.BasicInfo.Gender))
             .ForMember(dest => dest.PhotoUrl, opt
                 => opt.MapFrom(src => src.Photos!.FirstOrDefault(x=> x.IsMain)!.Url))
             .ForMember(dest => dest.Photos, opt

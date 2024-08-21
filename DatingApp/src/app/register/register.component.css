@@ -1,0 +1,95 @@
+form {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-floating textarea {
+  height: 100px;
+}
+
+.register-form {
+  background-color: #343a40;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Set width to 100% to take up full container space */
+  max-width: 1200px; /* Increased max-width to 1400px */
+  margin: 0 auto;
+  color: #fff;
+}
+
+/* Form floating labels */
+.form-floating label {
+  font-size: 1rem;
+  color: #adb5bd; /* Light gray label color */
+}
+
+/* Customize input fields */
+.form-floating .form-control {
+  background-color: #495057; /* Darker input background */
+  border: 1px solid #6c757d; /* Border color matching theme */
+  color: #fff; /* White text inside input fields */
+}
+
+.form-floating .form-control:focus {
+  border-color: #6f42c1; /* Purple border on focus */
+  box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25); /* Subtle purple shadow */
+}
+
+/* Adjust textarea height */
+.form-floating textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #6f42c1; /* Primary purple button */
+  border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+  background-color: #5a36a3; /* Darker shade on hover */
+  border-color: #4e2f8f;
+}
+
+.btn-secondary {
+  background-color: #495057; /* Dark secondary button */
+  border-color: #495057;
+  color: #adb5bd; /* Light text color */
+}
+
+.btn-secondary:hover {
+  background-color: #343a40; /* Darker shade on hover */
+  border-color: #343a40;
+}
+
+/* Center the form and add spacing between the two columns */
+.register-form .row {
+  margin-top: 30px;
+}
+
+.register-form .form-group {
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .register-form {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .register-form .row {
+    flex-direction: column;
+  }
+
+  .register-form .col-md-6 {
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  max-width: 100%; /* Allow container to stretch across the screen */
+  padding: 0 15px; /* Add some padding to the sides */
+}

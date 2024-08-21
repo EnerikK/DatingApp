@@ -19,6 +19,8 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
         public string? Introduction { get; set; }
         public string? Interests { get; set; }
         public string? LookingFor { get; set; }
+        public string? Gender { get; set; }
+
         public static BasicInformation UserInfoDto (UserInfoDto infoDto)
         {
             return new BasicInformation
@@ -33,7 +35,8 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
                 KnownAs = infoDto.KnownAs,
                 Interests = infoDto.Interests,
                 LookingFor = infoDto.LookingFor,
-                PhotoUrl = infoDto.PhotoUrl
+                PhotoUrl = infoDto.PhotoUrl,
+                Gender = infoDto.Gender
             };
         }
     }

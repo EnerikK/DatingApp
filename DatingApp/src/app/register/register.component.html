@@ -1,5 +1,96 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
-  <h2 class="text-center text-secondary">Sign up</h2>
+<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" class="register-form">
+  <h2 class="text-center mb-4">Sign Up</h2>
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-md-6">
+      <!-- Username -->
+      <div class="mb-4 form-floating">
+        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+        <label>Username</label>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4 form-floating">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <label>Password</label>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="mb-4 form-floating">
+        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password">
+        <label>Confirm Password</label>
+      </div>
+
+      <!-- First Name -->
+      <div class="mb-4 form-floating">
+        <input type="text" class="form-control" formControlName="firstname" placeholder="First Name">
+        <label>First Name</label>
+      </div>
+
+      <!-- Last Name -->
+      <div class="mb-4 form-floating">
+        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+        <label>Last Name</label>
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="mb-4 form-floating">
+        <input type="date" class="form-control" formControlName="dateofbirth" placeholder="Date of Birth">
+        <label>Date of Birth</label>
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-4 form-floating">
+        <input type="text" class="form-control" formControlName="phone" placeholder="Phone">
+        <label>Phone</label>
+      </div>
+
+      <!-- Current City -->
+      <div class="mb-4 form-floating">
+        <input type="text" class="form-control" formControlName="currentCity" placeholder="Current City">
+        <label>Current City</label>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-md-6">
+      <!-- Known As -->
+      <div class="mb-4 form-floating">
+        <input type="text" class="form-control" formControlName="knownAs" placeholder="Known As">
+        <label>Known As</label>
+      </div>
+
+      <!-- Introduction -->
+      <div class="mb-4 form-floating">
+        <textarea class="form-control" formControlName="introduction" placeholder="Introduction"></textarea>
+        <label>Introduction</label>
+      </div>
+
+      <!-- Interests -->
+      <div class="mb-4 form-floating">
+        <textarea class="form-control" formControlName="interests" placeholder="Interests"></textarea>
+        <label>Interests</label>
+      </div>
+
+      <!-- Photo URL -->
+      <div class="mb-4 form-floating">
+        <input type="file" class="form-control-file" formControlName="photoUrl" placeholder="Photo URL">
+        <label>Photo</label>
+      </div>
+
+      <!-- Looking For -->
+      <div class="mb-4 form-floating">
+        <textarea class="form-control" formControlName="lookingFor" placeholder="Looking For"></textarea>
+        <label>Looking For</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group text-center">
+    <button [disabled]="!registerForm.valid" class="btn btn-primary me-3" type="submit">Register</button>
+    <button class="btn btn-secondary" type="button" (click)="cancel()">Cancel</button>
+  </div>
+<!--  <h2 class="text-center text-secondary">Sign up</h2>
   <hr>
   <div class="mb-3">
     <label style="margin-right: 10px;">I am a:</label>
@@ -93,7 +184,7 @@
       type="datetime-local"
       class="form-control"
       name="Date"
-      formControlName="dateofbirth"
+      formControlName="dateOfBirth"
       placeholder="Date"
     >
     <label>DateOfBirth</label>
@@ -127,7 +218,7 @@
     <label>CurrentCity</label>
     <div class="invalid-feedback text-start">Please enter your CurrentCity</div>
   </div>
-<!--  <div class="mb-3 form-floating">
+&lt;!&ndash;  <div class="mb-3 form-floating">
     <input
       type="text"
       class="form-control"
@@ -136,13 +227,21 @@
       placeholder="photoUrl"
     >
     <label>photoUrl</label>
-  </div>-->
+  </div>&ndash;&gt;
+  @if(validationErrors){
+    <div class="alert alert-danger">
+      <ul>
+        @for(error of validationErrors; track $index){
+          <li>{{error}}</li>
+        }
+      </ul>
+    </div>
+  }
   <div class="form-group text-center">
-    <button class="btn btn-success me-2" type="submit">Register</button>
+    <button  class="btn btn-success me-2" type="submit">Register</button>
     <button class="btn btn-success me-2" type="button">Next</button>
     <button class="btn btn-default me-2" (click)="cancel()" type="button">Cancel</button>
-  </div>
+  </div>-->
 </form>
 
-<p>Form Value : {{registerForm.value | json}}</p>
 

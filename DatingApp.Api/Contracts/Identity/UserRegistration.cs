@@ -50,6 +50,8 @@ namespace DatingApp.Api.Contracts.Identity
         public string? LookingFor { get; set; }
         
         public string? PhotoUrl { get; set; }
+        
+        public string? Gender { get; set; }
 
         public List<Photos>? Photos { get;  set; }
 

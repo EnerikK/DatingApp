@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatingApp.Application.UserProfiles.Helper;
 
 namespace DatingApp.Application.Models
 {

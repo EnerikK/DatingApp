@@ -93,7 +93,7 @@ namespace DatingApp.Application.Identity.CommandsHandler
             {
                 var profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username,
                     request.Phone, request.DateOfBirth, request.CurrentCity,
-                    request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoUrl);
+                    request.KnownAs,request.Introduction,request.Interests,request.LookingFor,request.PhotoUrl,request.Gender);
                 
                 var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
 
@@ -106,9 +106,10 @@ namespace DatingApp.Application.Identity.CommandsHandler
                         IsMain = photoRequest.IsMain
                     };
                     _dataContext.Photos.Add(photo);
+                    profile.BasicInfo.PhotoUrl = photo.Url;
                     profile.AddPhoto(photo);
                 }
-
+                
                 _dataContext.UserProfiles.Add(profile);
                 await _dataContext.SaveChangesAsync(cancellationToken);
                 var savedProfile = await _dataContext.UserProfiles
