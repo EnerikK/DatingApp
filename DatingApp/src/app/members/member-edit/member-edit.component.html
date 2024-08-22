@@ -28,6 +28,10 @@
             <strong>Introduction:</strong>
             <p>{{member.basicInfo.introduction}}</p>
           </div>
+          <div>
+            <strong>Member since:</strong>
+            <p>{{member.dateCreated | date: 'dd MMM yyyy' }}</p>
+          </div>
         </div>
         <div class="card-footer">
           <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="btn btn-success col-12">Save Changes</button>

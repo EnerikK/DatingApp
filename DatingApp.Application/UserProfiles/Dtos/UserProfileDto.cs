@@ -12,6 +12,8 @@ namespace DatingApp.Application.UserProfiles.Dtos
     {
         public Guid UserProfileId { get; set; }
         public UserInfoDto? UserInfo { get; set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime LastModified { get; set; }
         public List<Photos>? Photos { get;  set; }
 
         public static UserProfileDto FromUserProfile(UserProfile profile)
@@ -19,6 +21,8 @@ namespace DatingApp.Application.UserProfiles.Dtos
             var userProfileDto = new UserProfileDto
             {
                 UserProfileId = profile.UserProfileId,
+                DateCreated = profile.DateCreated,
+                LastModified = profile.LastModified,
                 Photos = profile.Photos
             };
             userProfileDto.UserInfo = UserInfoDto.FromBasicInfo(profile.BasicInfo);

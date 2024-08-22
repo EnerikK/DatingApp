@@ -13,6 +13,8 @@ export class AccountService {
   private http = inject(HttpClient);
   baseUrl = environment.apiUrl;
   currentUser = signal<User | null>(null);
+  currentMember = signal<Member | null>(null);
+
 
   login(model: any) {
     return this.http.post<User>(this.baseUrl + 'v1.0/Identity/login',model).pipe(

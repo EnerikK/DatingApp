@@ -41,6 +41,12 @@ namespace DatingApp.Application.UserProfiles.QueryHandler
             }
 
             query = query.Where(x => x.BasicInfo.DateOfBirth >= minDOB && x.BasicInfo.DateOfBirth <= maxDOB);
+
+            query = userParams.OrderBy switch
+            {
+                "created" => query.OrderByDescending(x => x.DateCreated),
+                _ => query.OrderByDescending(x => x.LastModified)
+            };
             
             var pagedList = await PagedList<UserProfile>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
 

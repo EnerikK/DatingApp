@@ -17,6 +17,10 @@
             <strong>Introduction:</strong>
             <p>{{member.basicInfo.introduction}}</p>
           </div>
+          <div>
+            <strong>Member since:</strong>
+            <p>{{member.dateCreated | date: 'dd MMM yyyy'}}</p>
+          </div>
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">

@@ -14,7 +14,7 @@ public class UserParams
 
     public string? Gender { get; set; }
     public Guid? UserProfileIdToExclude { get; set; }
-
     public int MinAge { get; set; } = 18;
     public int MaxAge { get; set; } = 80;
+    public string OrderBy { get; set; } = "lastActive";
 }

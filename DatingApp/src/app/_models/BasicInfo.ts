@@ -11,4 +11,5 @@ export interface BasicInfo {
   introduction: string
   interests: string
   lookingFor: string
+  gender: string
 }

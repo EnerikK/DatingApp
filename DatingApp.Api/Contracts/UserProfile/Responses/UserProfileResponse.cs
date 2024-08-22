@@ -17,7 +17,9 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
             var profileResponse = new UserProfileResponse
             {
                 UserProfileId = profile.UserProfileId,
-                Photos = profile.Photos
+                Photos = profile.Photos,
+                DateCreated = profile.DateCreated,
+                LastModified = profile.LastModified
             };
             profileResponse.BasicInfo = BasicInformation.UserInfoDto(profile.UserInfo);
             return profileResponse;
