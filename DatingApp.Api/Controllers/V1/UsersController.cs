@@ -59,8 +59,6 @@ namespace DatingApp.Api.Controllers.V1
             var response = await _mediator.Send(query, cancellationToken);
 
             if (response.IsError) return HandleErrorResponse(response.Errors);
-            
-            
 
             var userProfile = UserProfileResponse.UserProfileDto(response.PayLoad);
 

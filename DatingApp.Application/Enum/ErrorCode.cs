@@ -19,6 +19,8 @@ namespace DatingApp.Application.Enum
         
         IdentityUserAlreadyExists = 501,
         IdentityCreationFailed = 502,
+        UserNotFound = 503,
+        TargetIdAndSourceIdAreTheSame = 504,
 
         UnknownError = 1
 

@@ -24,7 +24,6 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public string? LookingFor { get; set; }
         public string? Gender { get; set; }
 
-        
         public static UserInfoDto FromBasicInfo(BasicInfo basicInfo)
         {
             return new UserInfoDto

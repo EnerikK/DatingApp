@@ -23,7 +23,7 @@ namespace DatingApp.Application.UserProfiles.Dtos
                 UserProfileId = profile.UserProfileId,
                 DateCreated = profile.DateCreated,
                 LastModified = profile.LastModified,
-                Photos = profile.Photos
+                Photos = profile.Photos,
             };
             userProfileDto.UserInfo = UserInfoDto.FromBasicInfo(profile.BasicInfo);
             

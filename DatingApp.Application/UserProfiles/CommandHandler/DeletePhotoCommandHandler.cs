@@ -38,18 +38,9 @@ public class DeletePhotoCommandHandler : IRequestHandler<DeletePhotoCommand,Oper
            result.AddError(ErrorCode.NotFound,string.Format(UserProfileErrorMessage.CannotDeleteThisPhoto));
            return result;
        }
-
-       /*if (photo.Url != null)
-       {
-           var photoResult = await _photoService.DeletePhotoAsync(photo.Url);
-           if (photoResult.Result != "ok")
-           {
-               result.AddError(ErrorCode.ServerError, $"Failed to delete photo from the cloud");
-               return result;
-           }
-       }*/
        
        userProfile.Photos.Remove(photo);
+       var photoServiceResult = await _photoService.DeletePhotoAsync(photo.Url);
        await _dataContext.SaveChangesAsync(cancellationToken);
        
        result.PayLoad = new PhotoDto

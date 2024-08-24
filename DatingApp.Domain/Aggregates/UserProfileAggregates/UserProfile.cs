@@ -12,6 +12,8 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public UserProfile()
         {
             Photos = new List<Photos>();
+            LikedByUsers = new List<UserLike>();
+            LikedUsers = new List<UserLike>();
         }
 
         public Guid UserProfileId { get; private set; }
@@ -20,6 +22,8 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public DateTime DateCreated { get; private set; }
         public DateTime LastModified { get; private set; }
         public List<Photos>? Photos { get; private set; }
+        public List<UserLike> LikedByUsers { get; private set; } 
+        public List<UserLike> LikedUsers { get; private set; }
 
         //Factory Method
         public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)
@@ -30,12 +34,34 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
                 BasicInfo = basicInfo,
                 DateCreated = DateTime.UtcNow,
                 LastModified = DateTime.UtcNow,
-                Photos = new List<Photos>()
+                Photos = new List<Photos>(),
+                LikedByUsers = new List<UserLike>(),
+                LikedUsers = new List<UserLike>()
             };
-
         }
-
+        
         //Public Method 
+        public void AddLike(UserLike like)
+        {
+            if (like != null && !LikedUsers.Any(l => l.TargetUserId == like.TargetUserId))
+            {
+                LikedUsers.Add(like);
+                like.TargetUser?.LikedByUsers.Add(like);
+                LastModified = DateTime.UtcNow;
+                like.TargetUser.LastModified = DateTime.UtcNow;
+            }
+        }
+        public void DeleteLike(Guid targetUserId)
+        {
+            var like = LikedUsers.FirstOrDefault(l => l.TargetUserId == targetUserId);
+            if (like != null)
+            {
+                LikedUsers.Remove(like);
+                like.TargetUser.LikedByUsers.Remove(like);
+                LastModified = DateTime.UtcNow;
+                like.TargetUser.LastModified = DateTime.UtcNow;
+            }
+        }
         public int GetAge()
         {
             return BasicInfo.DateOfBirth.CalculateAge();

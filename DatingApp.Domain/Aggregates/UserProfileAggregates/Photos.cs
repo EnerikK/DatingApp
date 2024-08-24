@@ -10,23 +10,4 @@ public class Photos
     public string? Url { get; set; }
     public bool IsMain { get; set; }
     
-    /*// Reference to the BasicInfo to notify when IsMain changes
-    public BasicInfo BasicInfo { get; set; }
-
-    public void SetAsMain()
-    {
-        if (!IsMain)
-        {
-            IsMain = true;
-            BasicInfo?.UpdatePhotoUrl(Url);  // Update PhotoUrl in BasicInfo
-        }
-    }
-
-    public void UnsetMain()
-    {
-        if (IsMain)
-        {
-            IsMain = false;
-        }
-    }*/
 }

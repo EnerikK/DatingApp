@@ -2,6 +2,7 @@
 using DatingApp.Api.Contracts.UserProfile.Requests;
 using DatingApp.Api.Contracts.UserProfile.Responses;
 using DatingApp.Application.Identity.Dtos;
+using DatingApp.Application.Likes.Dtos;
 using DatingApp.Application.UserProfiles.Commands;
 using DatingApp.Domain.Aggregates.UserProfileAggregates;
 
@@ -19,6 +20,7 @@ namespace DatingApp.Api.MappingProfiles
                     => opt.MapFrom(src => src.Url))           
                 .ForMember(dest => dest.IsMain, opt
                     => opt.MapFrom(src => src.IsMain));
+            CreateMap<UserLikeDto, UserLike>();
             CreateMap<BasicInfo, BasicInformation>();
             CreateMap<UserProfileCreateUpdate, UpdateUserProfileBasicInfo>();
 

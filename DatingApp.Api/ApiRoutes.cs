@@ -10,6 +10,16 @@
             public const string SetPhotoMain = "SetPhotoMain";
             public const string DeletePhoto = "DeletePhoto";
         }
+
+        public static class UserLike
+        {
+            public const string AddLike = "AddLike";
+            public const string LikedUsers = "GetLikedUsers";
+            public const string LikedUsersLikedBy = "GetLikedUsersLikedBy";
+            public const string MutualLikes = "GetMutualLikes";
+
+
+        }
         public static class Identity
         {
             public const string Login = "login";
