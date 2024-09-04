@@ -4,7 +4,6 @@ using DatingApp.Application.Identity.Commands;
 using DatingApp.Application.Identity.Dtos;
 using DatingApp.Application.Models;
 using DatingApp.Application.Services;
-using DatingApp.DataAccess;
 using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -16,6 +15,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using DatingApp.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.Application.Identity.CommandsHandler

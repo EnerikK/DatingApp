@@ -64,8 +64,17 @@ public class AddLikeCommandHandler : IRequestHandler<AddLikeCommand,OperationRes
         {
             userProfile.DeleteLike(request.TargetUserId);
         }
-
-        await _dataContext.SaveChangesAsync(cancellationToken);
+        
+        // Save changes and handle potential errors
+        try
+        {
+            await _dataContext.SaveChangesAsync(cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            result.AddError(ErrorCode.ServerError, "Failed to save like changes.");
+            return result;
+        }
 
         result.PayLoad = UserProfileDto.FromUserProfile(userProfile);
         return result;

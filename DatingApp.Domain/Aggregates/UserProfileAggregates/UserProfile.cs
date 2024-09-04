@@ -22,8 +22,8 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public DateTime DateCreated { get; private set; }
         public DateTime LastModified { get; private set; }
         public List<Photos>? Photos { get; private set; }
-        public List<UserLike> LikedByUsers { get; private set; } 
-        public List<UserLike> LikedUsers { get; private set; }
+        public List<UserLike>? LikedByUsers { get; private set; } 
+        public List<UserLike>? LikedUsers { get; private set; }
 
         //Factory Method
         public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)

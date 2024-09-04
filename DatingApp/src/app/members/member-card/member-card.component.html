@@ -6,7 +6,7 @@
         <button routerLink="/members/{{member().userProfileId}}" class="btn btn-primary btn-lg"><i class="fa fa-user"></i></button>
       </li>
       <li class="list-inline-item">
-        <button class="btn btn-primary btn-lg"><i class="fa fa-heart"></i></button>
+        <button (click)="addLike()" class="btn btn-primary btn-lg"><i class="fa fa-heart"></i></button>
       </li>
       <li class="list-inline-item">
         <button class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i></button>
@@ -17,6 +17,10 @@
     <h6 class="card-title text-center mb-1">
       <i class="fa fa-user me-2"></i>
       {{member().basicInfo.knownAs}}
+
+      @if(hasLiked){
+        <i class="fa fa-heart ms-2"  style="color: red"></i>
+      }
     </h6>
     <p class="card-text text-muted text-center">{{member().basicInfo.currentCity}}</p>
   </div>

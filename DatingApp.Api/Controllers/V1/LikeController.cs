@@ -23,7 +23,6 @@ public class LikeController : BaseController
     }
     [HttpPost]
     [Route(ApiRoutes.UserLike.AddLike)]
-    [ValidateGuid("id")]
     public async Task<IActionResult> AddLike(string sourceUserId, string targetUserId, CancellationToken cancellationToken)
     {
         var command = new AddLikeCommand

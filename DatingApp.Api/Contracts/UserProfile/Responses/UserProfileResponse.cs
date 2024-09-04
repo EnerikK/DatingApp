@@ -10,7 +10,8 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
         public DateTime DateCreated { get; set; }
         public DateTime LastModified { get; set; }
         public List<Photos>? Photos { get;  set; }
-
+        public List<UserLike> LikedByUsers { get;  set; } 
+        public List<UserLike> LikedUsers { get;  set; }
 
         public static UserProfileResponse UserProfileDto(UserProfileDto profile)
         {
@@ -19,7 +20,9 @@ namespace DatingApp.Api.Contracts.UserProfile.Responses
                 UserProfileId = profile.UserProfileId,
                 Photos = profile.Photos,
                 DateCreated = profile.DateCreated,
-                LastModified = profile.LastModified
+                LastModified = profile.LastModified,
+                LikedByUsers = profile.LikedByUsers,
+                LikedUsers = profile.LikedUsers
             };
             profileResponse.BasicInfo = BasicInformation.UserInfoDto(profile.UserInfo);
             return profileResponse;

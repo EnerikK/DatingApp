@@ -15,7 +15,8 @@ namespace DatingApp.Application.UserProfiles.Dtos
         public DateTime DateCreated { get; set; }
         public DateTime LastModified { get; set; }
         public List<Photos>? Photos { get;  set; }
-
+        public List<UserLike> LikedByUsers { get;  set; } 
+        public List<UserLike> LikedUsers { get;  set; }
         public static UserProfileDto FromUserProfile(UserProfile profile)
         {
             var userProfileDto = new UserProfileDto
