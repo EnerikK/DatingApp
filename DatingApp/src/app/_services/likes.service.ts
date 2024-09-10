@@ -1,7 +1,6 @@
 import {inject, Injectable, signal} from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {User} from "../_models/user";
 import {Member} from "../_models/Member";
 
 @Injectable({
@@ -19,14 +18,15 @@ export class LikesService {
     return this.http.post(`${this.baseUrl}v1.0/Like/AddLike`, {}, { params });
   }
 
-  //return this.http.put(`${this.baseUrl}v1.0/Users/SetPhotoMain?identity=${userProfileId}&photoId=${photo.id}
   getLikedUsers(id : string){
-    return this.http.get(`${this.baseUrl}v1.0/Like/GetLikedUsers?id=${id}`);
+    return this.http.get<string[]>(`${this.baseUrl}v1.0/Like/GetLikedUsers?id=${id}`).subscribe({
+      next: ids => this.likeIds.set(ids)
+    });
   }
 
   getLikedUsersLikedBy(id:string){
     const params = new HttpParams().set('id', id);
-    return this.http.get(`${this.baseUrl}v1.0/Like/GetLikedUsersLikedBy`, { params });
+    return this.http.get<Member[]>(`${this.baseUrl}v1.0/Like/GetLikedUsersLikedBy`, { params });
   }
 
 }

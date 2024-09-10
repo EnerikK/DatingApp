@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using DatingApp.Api.Interfaces;
 using DatingApp.Api.Options;
 using DatingApp.Application.Services;
 
@@ -10,6 +11,6 @@ public class ApplicationLayerRegistar : IWebApplicationBuilderRegistar
     {
         builder.Services.AddScoped<IdentityService>();
         builder.Services.AddScoped<IPhotoService, PhotoService>();
-
+        builder.Services.AddScoped<IMessageRepository, MessageRepository>();
     }
 }

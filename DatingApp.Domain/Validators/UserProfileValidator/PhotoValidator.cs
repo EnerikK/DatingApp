@@ -7,6 +7,6 @@ public class PhotoValidator : AbstractValidator<Photos>
 {
     public PhotoValidator()
     {
-        RuleFor(info => info.Url).NotNull().WithMessage("Picture must Url format and its required ");
+        RuleFor(info => info.Url).NotNull().WithMessage("Picture must be Url format and its required ");
     }
 }

@@ -14,19 +14,17 @@ import {BehaviorSubject} from "rxjs";
   templateUrl: './member-card.component.html',
   styleUrl: './member-card.component.css',
 })
-export class MemberCardComponent implements OnInit{
+export class MemberCardComponent {
   private likeService = inject(LikesService);
   private accountService = inject(AccountService);
   member = input.required<Member>();
-  hasLiked: boolean = false;
+  hasLiked = computed(() => this.likeService.likeIds().includes(this.member().userProfileId));
 
-  ngOnInit(): void {
-    this.updateHasLiked();
-  }
 
-  private updateHasLiked() {
+
+/*  private updateHasLiked() {
     this.hasLiked = this.likeService.likeIds().includes(this.member().userProfileId);
-  }
+  }*/
 
   addLike(){
     const user = this.accountService.currentUser();
@@ -34,12 +32,11 @@ export class MemberCardComponent implements OnInit{
 
     this.likeService.addLike(user.userProfileId, this.member().userProfileId).subscribe({
       next: () => {
-        if (this.hasLiked) {
+        if (this.hasLiked()) {
           this.likeService.likeIds.update(ids => ids.filter(x => x !== this.member().userProfileId));
         } else {
           this.likeService.likeIds.update(ids => [...ids, this.member().userProfileId]);
         }
-        this.updateHasLiked();
       },
       error: err => {
         console.error('Failed to like the user:', err);

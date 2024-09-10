@@ -19,8 +19,9 @@ export class ListsComponent implements OnInit{
     this.loadLikes();
   }
 
-
   loadLikes(){
-    this.likeService.getLikedUsers(this.member().userProfileId);
+    this.likeService.getLikedUsersLikedBy(this.member().userProfileId).subscribe({
+      next: members => this.members = members
+    })
   }
 }

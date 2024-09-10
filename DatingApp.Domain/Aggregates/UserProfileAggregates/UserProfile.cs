@@ -24,6 +24,8 @@ namespace DatingApp.Domain.Aggregates.UserProfileAggregates
         public List<Photos>? Photos { get; private set; }
         public List<UserLike>? LikedByUsers { get; private set; } 
         public List<UserLike>? LikedUsers { get; private set; }
+        public List<Message> MessagesSend { get; set; } = [];
+        public List<Message> MessagesReceived { get; set; } = [];
 
         //Factory Method
         public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)

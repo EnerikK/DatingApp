@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="Upload picture functionality on the cloud and fix some bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/UserProfileResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Contracts/UserProfile/Responses/UserProfileResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/LikeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Api/Controllers/V1/LikeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/RegisterIdentityHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Identity/CommandsHandler/RegisterIdentityHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/Likes/CommandsHandlers/AddLikeCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/Likes/CommandsHandlers/AddLikeCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserProfileDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Application/UserProfiles/Dtos/UserProfileDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp.Domain/Aggregates/UserProfileAggregates/UserProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/account.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/likes.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/likes.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/lists/lists.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/lists/lists.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.ts" afterDir="false" />
     </list>
@@ -135,6 +126,7 @@
       <workItem from="1724692737373" duration="4864000" />
       <workItem from="1724706166815" duration="4805000" />
       <workItem from="1724766086254" duration="3255000" />
+      <workItem from="1725903367946" duration="1672000" />
     </task>
     <task id="LOCAL-00001" summary="More work on the Member Interface">
       <option name="closed" value="true" />
