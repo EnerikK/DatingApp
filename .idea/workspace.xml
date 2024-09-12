@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="Upload picture functionality on the cloud and fix some bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/_services/likes.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/_services/likes.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/lists/lists.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/lists/lists.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DatingApp/src/app/members/member-card/member-card.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="86359794-400c-44bd-be1e-7c2eb74f6588" name="Changes" comment="Upload picture functionality on the cloud and fix some bugs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,6 +121,7 @@
       <workItem from="1724706166815" duration="4805000" />
       <workItem from="1724766086254" duration="3255000" />
       <workItem from="1725903367946" duration="1672000" />
+      <workItem from="1725989443836" duration="614000" />
     </task>
     <task id="LOCAL-00001" summary="More work on the Member Interface">
       <option name="closed" value="true" />

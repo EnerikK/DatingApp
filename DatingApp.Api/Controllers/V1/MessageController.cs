@@ -1,6 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Security.Claims;
+using AutoMapper;
 using DatingApp.Api.Contracts.Identity;
+using DatingApp.Api.Extensions;
 using DatingApp.Api.Interfaces;
+using DatingApp.Application.Message.Commands;
 using DatingApp.Domain.Aggregates.UserProfileAggregates;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,32 +19,37 @@ public class MessageController : BaseController
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
     private readonly IMessageRepository _messageRepository;
-    private readonly UsersController _usersController;
 
-    public MessageController(IMediator mediator , IMapper mapper,IMessageRepository messageRepository,UsersController usersController)
+    public MessageController(IMediator mediator , IMapper mapper,IMessageRepository messageRepository)
     {
         _mediator = mediator;
         _mapper = mapper;
         _messageRepository = messageRepository;
-        _usersController = usersController;
     }
 
     [HttpPost]
-    public async Task<ActionResult<MessageDto>> CreateMessage(CreateMessageDto createMessageDto,IdentityUserProfile identityUserProfile,CancellationToken cancellationToken)
+    [Route(ApiRoutes.Message.CreateMessage)]
+    public async Task<IActionResult> CreateMessage(CreateMessageDto createMessageDto,CancellationToken cancellationToken)
     {
-        var username = identityUserProfile.UserProfileId.ToString();
-        if (username == createMessageDto.RecipientUsername.ToLower()) return BadRequest("You cant message yourself");
-
-        var sender = await _usersController.GetUserProfileById(username, cancellationToken);
-        var recipient = await _usersController.GetUserProfileById(createMessageDto.RecipientUsername, cancellationToken);
-        if (recipient == null || sender == null) return BadRequest("Cannot send message at this time");
-        
-        var message = new Message()
+        /*foreach (var claim in User.Claims)
         {
-            Sender = sender,
-            Recipient = recipient,
-            SenderUsername = 
+            Console.WriteLine($"ClaimType: {claim.Type}, Value: {claim.Value}");
+        }*/
+        var identityUserId = User.FindFirst("UserProfileId")?.Value;
+        if (string.IsNullOrEmpty(identityUserId) || !Guid.TryParse(identityUserId, out var identityUserGuid))
+        {
+            return Unauthorized("User not authenticated or invalid user ID format.");
         }
+        var command = new CreateMessageCommand()
+        {
+            SenderUsername = identityUserGuid,
+            RecipientUsername = createMessageDto.RecipientUsername,
+            Content = createMessageDto.Content
+        };
+
+        var response = await _mediator.Send(command, cancellationToken);
+        if (response.IsError) return HandleErrorResponse(response.Errors);
+        return Ok(response.PayLoad);
     }
     
 }

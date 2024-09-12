@@ -27,6 +27,11 @@
             public const string IdentityById = "{identityUserId}";
             public const string CurrentUser = "currentuser";
         }
+        public static class Message
+        {
+            public const string CreateMessage = "CreateMessage";
+
+        }
 
     }
 }
